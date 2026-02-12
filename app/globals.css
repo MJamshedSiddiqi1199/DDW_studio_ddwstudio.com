@@ -653,3 +653,48 @@ body {
   border-radius: 50%;
   animation: rotate-slow 20s linear infinite;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   LEGAL / POLICY PAGES
+   Shared styles for Privacy, Terms, Cookies, etc.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Body text inside legal sections */
+.legal-content p {
+  color: #a1a1aa; /* zinc-400 */
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* Bullet lists */
+.legal-content ul {
+  color: #a1a1aa;
+  line-height: 1.8;
+}
+
+.legal-content li {
+  color: #a1a1aa;
+  line-height: 1.8;
+}
+
+.legal-content li::marker {
+  color: #6366f1; /* indigo-500 markers */
+}
+
+/* Links inside legal body text */
+.legal-content a {
+  color: #818cf8; /* indigo-400 */
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+
+.legal-content a:hover {
+  color: #a5b4fc; /* indigo-300 */
+}
+
+/* Separator between legal sections — subtle gradient line */
+.legal-content > section + section {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 3rem;
+}

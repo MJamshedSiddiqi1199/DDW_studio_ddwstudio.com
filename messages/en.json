@@ -1,0 +1,799 @@
+{
+  "Metadata": {
+    "title": "DDW Studio - AI Automation Platform for Enterprise Operations | Voice AI, HR Automation & Fleet Management",
+    "description": "Transform your business operations with DDW Studio's AI automation platform. AI voice assistants, HR automation software, Fleet-OS fleet management, and automated proposal generation. Reduce response times by 95% and boost conversions by 47%.",
+    "keywords": "AI automation platform, enterprise AI software, AI voice assistant for business, HR automation software, fleet management software, automated proposal generator"
+  },
+  "Navigation": {
+    "brand": "DDW Studio",
+    "brandSub": "Enterprise AI",
+    "links": {
+      "home": "Home",
+      "products": "Products",
+      "about": "About"
+    },
+    "cta": {
+      "talkToUs": "Talk to Us",
+      "talkToSales": "Talk to Sales",
+      "getDemo": "Get Demo"
+    }
+  },
+  "Hero": {
+    "badge1": "Enterprise AI Platform",
+    "badge2": "SOC 2 Certified",
+    "h1Line1": "AI Automation Platform",
+    "h1Line2": "for Modern Enterprises",
+    "subheadline": "Automate voice calls, HR operations, fleet management, and proposal generation with enterprise-grade AI.",
+    "subheadlineHighlight": " Reduce response times by 95% and increase conversions by 47%.",
+    "subheadlineTrust": " Trusted by 500+ teams worldwide.",
+    "cta1": "Schedule Enterprise Demo",
+    "cta2": "Explore Products",
+    "ticker": "Powering enterprise operations worldwide",
+    "industries": {
+      "healthcare": "Healthcare",
+      "finance": "Finance",
+      "manufacturing": "Manufacturing",
+      "logistics": "Logistics",
+      "technology": "Technology"
+    },
+    "scrollToExplore": "Scroll to explore"
+  },
+  "Stats": {
+    "badge": "Proven Results",
+    "h2": "Numbers That",
+    "h2Highlight": "Speak",
+    "subtitle": "Real results from real clients. Our AI solutions deliver measurable impact from day one.",
+    "stat1": {
+      "prefix": "$",
+      "value": "2",
+      "suffix": "M+",
+      "label": "Revenue Generated for Clients"
+    },
+    "stat2": {
+      "prefix": "<",
+      "value": "60",
+      "suffix": "s",
+      "label": "Average Call Response Time"
+    },
+    "stat3": {
+      "prefix": "",
+      "value": "47",
+      "suffix": "%",
+      "label": "Average Conversion Increase"
+    },
+    "stat4": {
+      "prefix": "",
+      "value": "99.9",
+      "suffix": "%",
+      "label": "Platform Uptime SLA"
+    }
+  },
+  "Products": {
+    "badge": "Enterprise Products",
+    "h2": "AI Products Built for",
+    "h2Highlight": "Scale",
+    "subtitle": "Four enterprise-grade AI solutions. Each with its own identity, designed to transform specific business operations.",
+    "bottomNote": "Each product operates as an independent brand with dedicated support and development teams.",
+    "learnMore": "Learn more",
+    "product1": {
+      "name": "Lyra AI Voice Assistant",
+      "tagline": "AI-Powered Call Automation",
+      "stat": "95%",
+      "statLabel": "faster response",
+      "description": "Enterprise AI voice assistant that handles inbound and outbound calls with natural conversation, automatic CRM updates, and intelligent call routing. Perfect for sales teams, customer support, and appointment scheduling.",
+      "features": [
+        "Natural Conversation",
+        "CRM Integration",
+        "Intelligent Routing"
+      ]
+    },
+    "product2": {
+      "name": "HR-OS",
+      "tagline": "AI HR Automation Software",
+      "stat": "80%",
+      "statLabel": "fewer tickets",
+      "description": "Intelligent HR automation platform with AI chatbot and voice support. Answers employee questions 24/7, automates HR workflows, and integrates with existing HRIS systems. Reduce HR ticket volume by 80%.",
+      "features": [
+        "24/7 AI Chatbot",
+        "Workflow Automation",
+        "HRIS Integration"
+      ]
+    },
+    "product3": {
+      "name": "Fleet-OS",
+      "tagline": "AI Fleet Management System",
+      "stat": "92%",
+      "statLabel": "fewer errors",
+      "description": "Voice-activated fleet management and dispatch system for logistics operations. AI-powered route optimization, real-time driver coordination, and automated scheduling. Reduce dispatch errors by 92%.",
+      "features": [
+        "Route Optimization",
+        "Real-time Coordination",
+        "Automated Scheduling"
+      ]
+    },
+    "product4": {
+      "name": "AI Proposal Generator",
+      "tagline": "Automated Sales Proposal Software",
+      "stat": "3x",
+      "statLabel": "faster deals",
+      "description": "AI-powered proposal generation that creates professional sales proposals instantly from CRM data. Voice-activated, customizable templates, and automatic client personalization. Close deals 3x faster.",
+      "features": [
+        "Voice-Activated",
+        "Custom Templates",
+        "Auto Personalization"
+      ]
+    }
+  },
+  "HowItWorks": {
+    "badge": "How It Works",
+    "h2": "From Consultation to",
+    "h2Highlight": "Results",
+    "subtitle": "A proven process that delivers measurable outcomes. Most clients see ROI within the first 30 days.",
+    "efficiencyValue": "+47%",
+    "efficiencyLabel": "Efficiency Gain",
+    "step1": {
+      "number": "01",
+      "title": "Discovery Call",
+      "description": "We analyze your operations, identify bottlenecks, and map out exactly where AI can deliver the highest ROI for your business."
+    },
+    "step2": {
+      "number": "02",
+      "title": "Custom Integration",
+      "description": "Our team deploys tailored AI solutions that integrate seamlessly with your existing systems. No disruption, just enhancement."
+    },
+    "step3": {
+      "number": "03",
+      "title": "Launch & Scale",
+      "description": "Go live with confidence. Our AI learns and improves continuously, delivering compounding returns as your business grows."
+    }
+  },
+  "CompanyInfo": {
+    "badge": "About DDW Studio",
+    "h2Pre": "The",
+    "h2Highlight": "AI Evolution",
+    "h2Post": "of Digital Dream Works",
+    "aboutPara": "DDW Studio is the enterprise AI division of <company>Digital Dream Works LLC</company>, a Florida-based technology company. We've evolved from traditional digital services to building cutting-edge AI products that transform business operations.",
+    "companyName": "Digital Dream Works LLC",
+    "ddwCard": {
+      "title": "DDW Studio",
+      "subtitle": "Enterprise AI Products Division",
+      "description": "Each SaaS product (Lyra, HR-OS, Fleet-OS, Proposal Gen) operates as an independent brand with its own domain, identity, and dedicated team."
+    },
+    "agencyCard": {
+      "title": "Digital Dream Works Agency",
+      "subtitle": "Professional Services Division",
+      "description": "Retainer-based services: Marketing Systems, Web Development, Custom Software, AI Automation.",
+      "url": "DigitalDreamWorksAgency.com"
+    },
+    "stats": {
+      "saasProducts": "SaaS Products",
+      "aiOps": "AI Operations",
+      "certified": "Certified",
+      "uptimeSla": "Uptime SLA"
+    },
+    "location": "Florida, USA"
+  },
+  "Testimonials": {
+    "badge": "Client Success",
+    "h2": "What Leaders",
+    "h2Highlight": "Say",
+    "subtitle": "Don't just take our word for it. Here's what industry leaders say about working with DDW Studio.",
+    "testimonial1": {
+      "quote": "DDW Studio transformed our entire sales process. What used to take our team days now happens in hours. The ROI was visible within the first month.",
+      "author": "James Davidson",
+      "role": "VP of Operations",
+      "company": "TechCorp Inc."
+    },
+    "testimonial2": {
+      "quote": "The AI solutions from DDW are unlike anything we've seen. They truly understand enterprise needs and deliver solutions that scale.",
+      "author": "Sarah Mitchell",
+      "role": "Chief Digital Officer",
+      "company": "Meridian Healthcare"
+    },
+    "testimonial3": {
+      "quote": "We closed our biggest deal ever using Proposal Gen. The speed and quality of output is remarkable. DDW is now essential to our workflow.",
+      "author": "Michael Chen",
+      "role": "CEO",
+      "company": "Apex Logistics"
+    }
+  },
+  "Security": {
+    "badge": "Enterprise Security",
+    "h2": "Bank-Grade",
+    "h2Highlight": "Security",
+    "subtitle": "Your data security is our top priority. We employ industry-leading security practices and maintain compliance with major regulatory frameworks.",
+    "feature1": {
+      "title": "SOC 2 Type II",
+      "description": "Independently audited security controls and processes"
+    },
+    "feature2": {
+      "title": "GDPR Compliant",
+      "description": "Full compliance with European data protection regulations"
+    },
+    "feature3": {
+      "title": "End-to-End Encryption",
+      "description": "Your data is encrypted at rest and in transit"
+    },
+    "feature4": {
+      "title": "99.9% Uptime SLA",
+      "description": "Enterprise-grade infrastructure with guaranteed availability"
+    },
+    "certifications": [
+      "SOC 2",
+      "GDPR",
+      "HIPAA",
+      "ISO 27001",
+      "CCPA"
+    ]
+  },
+  "CTA": {
+    "h2Line1": "Ready to Transform",
+    "h2Line2": "Your Operations?",
+    "subtitle": "Join industry leaders who trust DDW Studio to power their AI transformation. Let's discuss how we can help you achieve your goals.",
+    "cta1": "Schedule a Demo",
+    "cta2": "Contact Sales",
+    "microcopy": "No commitment required • Free consultation • Results guaranteed"
+  },
+  "Footer": {
+    "brand": "DDW Studio",
+    "brandSub": "Enterprise AI",
+    "tagline": "Enterprise AI solutions that transform operations and drive growth.",
+    "columns": {
+      "products": "Products",
+      "company": "Company",
+      "legal": "Legal"
+    },
+    "productLinks": [
+      "Lyra",
+      "HR-OS",
+      "Fleet-OS",
+      "Proposal Gen"
+    ],
+    "companyLinks": [
+      "Home",
+      "About",
+      "Contact"
+    ],
+    "legalLinks": [
+      "Privacy",
+      "Terms",
+      "Security",
+      "Cookies"
+    ],
+    "copyright": "© {year} DDW Studio. Digital Dream Works LLC. All rights reserved.",
+    "location": "Florida, USA"
+  },
+  "ContactForm": {
+    "title": "Schedule Your Enterprise Demo",
+    "subtitle": "See how DDW Studio's AI automation can transform your operations",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "John",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Smith",
+    "email": "Work Email",
+    "emailPlaceholder": "john.smith@company.com",
+    "phone": "Phone Number",
+    "phonePlaceholder": "(555) 123-4567",
+    "company": "Company Name",
+    "companyPlaceholder": "Acme Corp",
+    "companySize": "Company Size",
+    "companySizePlaceholder": "Select company size",
+    "productInterest": "Primary Interest",
+    "productInterestPlaceholder": "Which product interests you most?",
+    "message": "Additional Information (Optional)",
+    "messagePlaceholder": "Tell us about your needs...",
+    "consent": "I agree to DDW Studio's Privacy Policy and consent to being contacted about this request.",
+    "submit": "Schedule Demo",
+    "sending": "Submitting...",
+    "successTitle": "Request Received!",
+    "successSubtitle": "Thank you for your interest. Our team will contact you shortly at connect@digitaldreamworksagency.com.",
+    "sendAnother": "Send another request",
+    "errorConfig": "EmailJS configuration is missing. Please check your .env file.",
+    "errorGeneral": "Something went wrong. Please try again later.",
+    "privacy": "By submitting this form, you agree to our privacy policy.",
+    "companySizes": {
+      "s1_50": "1-50 employees",
+      "s51_200": "51-200 employees",
+      "s201_1000": "201-1,000 employees",
+      "s1001_5000": "1,001-5,000 employees",
+      "s5000": "5,000+ employees"
+    },
+    "products": {
+      "lyra": "Lyra AI Voice Assistant",
+      "hros": "HR-OS - HR Automation",
+      "fleet": "Fleet-OS - Fleet Management",
+      "proposal": "AI Proposal Generator",
+      "multiple": "Multiple Products",
+      "unsure": "Not sure yet"
+    }
+  },
+  "PrivacyPolicy": {
+    "metaTitle": "Privacy Policy | DDW Studio - Digital Dream Works LLC",
+    "metaDescription": "DDW Studio privacy policy. Learn how Digital Dream Works LLC collects, uses, and protects your data in compliance with GDPR and US privacy laws.",
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: February 9, 2026",
+    "intro": "Digital Dream Works LLC (\"DDW Studio\", \"we\", \"us\", or \"our\") operates ddwstudio.com. This Privacy Policy explains how we collect, use, and protect your information.",
+    "s1": {
+      "title": "Information We Collect",
+      "p1": "We collect information you provide directly to us, such as:",
+      "b1": "Name and email address when you request a demo or contact us",
+      "b2": "Company name and job title when you fill out forms",
+      "b3": "Payment information when you subscribe to our services",
+      "b4": "Communications you send us via email or contact forms",
+      "p2": "We automatically collect certain information when you visit our website:",
+      "b5": "IP address and browser type",
+      "b6": "Pages visited and time spent on each page",
+      "b7": "Referring website addresses",
+      "b8": "Device and operating system information"
+    },
+    "s2": {
+      "title": "How We Use Your Information",
+      "p1": "We use the information we collect to:",
+      "b1": "Provide, maintain, and improve our AI automation platform",
+      "b2": "Process transactions and send related information",
+      "b3": "Send technical notices and support messages",
+      "b4": "Respond to your comments and questions",
+      "b5": "Send marketing communications (with your consent)",
+      "b6": "Monitor and analyze usage patterns to improve user experience",
+      "b7": "Detect and prevent fraudulent transactions and other illegal activities"
+    },
+    "s3": {
+      "title": "Information Sharing",
+      "p1": "We do not sell, trade, or rent your personal information to third parties. We may share your information with:",
+      "b1": "Service providers who assist us in operating our platform",
+      "b2": "Business partners with your consent",
+      "b3": "Law enforcement when required by law",
+      "b4": "Successor entities in the event of a merger or acquisition"
+    },
+    "s4": {
+      "title": "Data Security",
+      "p1": "We implement industry-standard security measures to protect your personal information including AES-256 encryption for data at rest and in transit, secure HTTPS connections, regular security audits, and access controls. While we take reasonable precautions, no method of transmission over the Internet is 100% secure."
+    },
+    "s5": {
+      "title": "Cookies",
+      "p1": "We use cookies and similar tracking technologies to improve your experience. See our Cookie Policy at ddwstudio.com/cookies for details. You can control cookie settings through your browser."
+    },
+    "s6": {
+      "title": "Your Rights",
+      "p1": "Depending on your location, you may have the right to:",
+      "b1": "Access the personal information we hold about you",
+      "b2": "Request correction of inaccurate data",
+      "b3": "Request deletion of your personal data",
+      "b4": "Object to processing of your personal data",
+      "b5": "Request restriction of processing",
+      "b6": "Data portability",
+      "p2": "To exercise these rights, contact us at:"
+    },
+    "s7": {
+      "title": "GDPR (European Users)",
+      "p1": "If you are located in the European Economic Area (EEA), you have additional rights under the General Data Protection Regulation (GDPR). Our lawful basis for processing your data is consent, contract performance, or legitimate interests. You have the right to lodge a complaint with your local data protection authority."
+    },
+    "s8": {
+      "title": "Data Retention",
+      "p1": "We retain your personal information for as long as necessary to provide our services and comply with legal obligations. When you delete your account, we will delete or anonymize your information within 30 days."
+    },
+    "s9": {
+      "title": "Third-Party Links",
+      "p1": "Our website may contain links to third-party websites. We are not responsible for the privacy practices of these sites and encourage you to review their privacy policies."
+    },
+    "s10": {
+      "title": "Children's Privacy",
+      "p1": "Our services are not directed to individuals under 18 years of age. We do not knowingly collect personal information from children."
+    },
+    "s11": {
+      "title": "Changes to This Policy",
+      "p1": "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the \"Last updated\" date."
+    },
+    "s12": {
+      "title": "Contact Us",
+      "p1": "If you have questions about this Privacy Policy, contact us at:",
+      "emailLabel": "Email:",
+      "address": "Digital Dream Works LLC, Florida, USA",
+      "websiteLabel": "Website:"
+    }
+  },
+  "TermsOfService": {
+    "metaTitle": "Terms of Service | DDW Studio - Digital Dream Works LLC",
+    "metaDescription": "DDW Studio terms of service. Review the terms and conditions governing use of DDW Studio's enterprise AI automation platform and services.",
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: February 9, 2026",
+    "intro": "Please read these Terms of Service carefully before using DDW Studio's enterprise AI automation platform operated by Digital Dream Works LLC.",
+    "s1": {
+      "title": "Acceptance of Terms",
+      "p1": "By accessing or using DDW Studio (\"the Platform\"), you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you may not access the Platform. These terms apply to all visitors, users, and customers."
+    },
+    "s2": {
+      "title": "Description of Service",
+      "p1": "DDW Studio provides enterprise AI automation software including Lyra AI Voice Assistant, HR-OS HR Automation Software, Fleet-OS Fleet Management System, and AI Proposal Generator. Features and pricing are subject to change with notice."
+    },
+    "s3": {
+      "title": "Account Registration",
+      "p1": "To access certain features, you must register for an account. You agree to:",
+      "b1": "Provide accurate and complete information",
+      "b2": "Maintain the security of your password",
+      "b3": "Accept responsibility for all activities under your account",
+      "b4": "Notify us immediately of any unauthorized access"
+    },
+    "s4": {
+      "title": "Acceptable Use",
+      "p1": "You agree not to use the Platform to:",
+      "b1": "Violate any applicable laws or regulations",
+      "b2": "Infringe on intellectual property rights",
+      "b3": "Transmit harmful, offensive, or disruptive content",
+      "b4": "Attempt to gain unauthorized access to any systems",
+      "b5": "Interfere with the proper functioning of the Platform",
+      "b6": "Reverse engineer or copy our AI models or software"
+    },
+    "s5": {
+      "title": "Payment Terms",
+      "p1": "Subscription fees are billed in advance on a monthly or annual basis. All fees are non-refundable except as required by law or as stated in our refund policy. We reserve the right to change pricing with 30 days notice."
+    },
+    "s6": {
+      "title": "Intellectual Property",
+      "p1": "The Platform and its original content, features, and functionality are owned by Digital Dream Works LLC and are protected by US and international copyright, trademark, and other intellectual property laws. You retain ownership of data you input into the Platform."
+    },
+    "s7": {
+      "title": "Data and Privacy",
+      "p1": "Your use of the Platform is also governed by our Privacy Policy at",
+      "p2": "By using the Platform, you consent to our data practices as described in the Privacy Policy."
+    },
+    "s8": {
+      "title": "Limitation of Liability",
+      "p1": "To the maximum extent permitted by law, Digital Dream Works LLC shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of the Platform. Our total liability shall not exceed the amount paid by you in the 12 months preceding the claim."
+    },
+    "s9": {
+      "title": "Disclaimer of Warranties",
+      "p1": "The Platform is provided \"as is\" without warranty of any kind. We do not warrant that the Platform will be uninterrupted, error-free, or free of viruses. We make no warranties regarding the accuracy or reliability of any AI-generated content."
+    },
+    "s10": {
+      "title": "Termination",
+      "p1": "We may terminate or suspend your account immediately, without prior notice, for conduct that we believe violates these Terms or is harmful to other users, us, or third parties. Upon termination, your right to use the Platform will cease immediately."
+    },
+    "s11": {
+      "title": "Governing Law",
+      "p1": "These Terms shall be governed by and construed in accordance with the laws of the State of Florida, United States, without regard to its conflict of law provisions. Any disputes shall be resolved in the courts of Florida."
+    },
+    "s12": {
+      "title": "Changes to Terms",
+      "p1": "We reserve the right to modify these terms at any time. We will notify users of significant changes via email or prominent notice on the Platform. Continued use after changes constitutes acceptance."
+    },
+    "s13": {
+      "title": "Contact",
+      "p1": "Questions about these Terms? Contact us at:",
+      "emailLabel": "Email:",
+      "address": "Digital Dream Works LLC, Florida, USA"
+    }
+  },
+  "CookiePolicy": {
+    "metaTitle": "Cookie Policy | DDW Studio - Digital Dream Works LLC",
+    "metaDescription": "DDW Studio cookie policy. Learn how we use cookies and tracking technologies on our enterprise AI platform and how to manage your preferences.",
+    "title": "Cookie Policy",
+    "lastUpdated": "Last updated: February 9, 2026",
+    "intro": "This Cookie Policy explains how Digital Dream Works LLC uses cookies and similar technologies on ddwstudio.com.",
+    "s1": {
+      "title": "What Are Cookies",
+      "p1": "Cookies are small text files stored on your device when you visit a website. They help websites remember your preferences, understand how you use the site, and improve your experience."
+    },
+    "s2": {
+      "title": "Types of Cookies We Use",
+      "essential": {
+        "title": "Essential Cookies (Always Active)",
+        "subtitle": "Required for the website to function properly. Cannot be disabled.",
+        "b1": "Session management",
+        "b2": "Security and fraud prevention",
+        "b3": "Load balancing"
+      },
+      "analytics": {
+        "title": "Analytics Cookies (Optional)",
+        "subtitle": "Help us understand how visitors interact with our website.",
+        "b1": "Google Analytics - page views, traffic sources",
+        "b2": "Hotjar - user behavior analysis",
+        "b3": "Performance monitoring"
+      },
+      "marketing": {
+        "title": "Marketing Cookies (Optional)",
+        "subtitle": "Used to deliver relevant advertisements and track campaign effectiveness.",
+        "b1": "Google Ads - ad targeting",
+        "b2": "LinkedIn Insight Tag - B2B targeting",
+        "b3": "Conversion tracking"
+      },
+      "functional": {
+        "title": "Functional Cookies (Optional)",
+        "subtitle": "Remember your preferences and settings.",
+        "b1": "Language preferences",
+        "b2": "Chat widget settings",
+        "b3": "Demo booking preferences"
+      }
+    },
+    "s3": {
+      "title": "Managing Cookies",
+      "p1": "You can control cookies through:",
+      "b1": "Our cookie consent banner (appears on first visit)",
+      "b2": "Your browser settings - most browsers allow you to refuse cookies",
+      "b3": "Third-party opt-out tools (Google Analytics Opt-out, etc.)",
+      "p2": "Note: Disabling essential cookies may affect website functionality."
+    },
+    "s4": {
+      "title": "Third-Party Cookies",
+      "p1": "Some cookies are placed by third-party services on our pages. We do not control these cookies. Please review the respective privacy policies of these third parties."
+    },
+    "s5": {
+      "title": "Cookie Retention",
+      "p1": "Session cookies expire when you close your browser. Persistent cookies remain for a defined period (typically 1-2 years) or until you delete them."
+    },
+    "s6": {
+      "title": "Updates to This Policy",
+      "p1": "We may update this Cookie Policy periodically. The updated date at the top of this page indicates when it was last revised."
+    },
+    "s7": {
+      "title": "Contact",
+      "p1": "Questions about our cookie practices? Contact: privacy@ddwstudio.com"
+    }
+  },
+  "About": {
+    "metaTitle": "About DDW Studio | Enterprise AI Automation Platform | Digital Dream Works LLC",
+    "metaDescription": "DDW Studio is the enterprise AI division of Digital Dream Works LLC, a Florida-based technology company. Building AI automation products that transform business operations across voice, HR, logistics, and sales.",
+    "hero": {
+      "title": "About DDW Studio",
+      "subtitle": "The enterprise AI division of Digital Dream Works LLC, building intelligent automation products that transform how businesses operate."
+    },
+    "story": {
+      "badge": "Our Story",
+      "h2": "The AI Evolution of Digital Dream Works",
+      "p1": "DDW Studio is the enterprise AI products division of Digital Dream Works LLC, a Florida-based technology company. We began as a full-service digital agency helping businesses with marketing systems, web development, and custom software. As AI became transformative, we made a strategic pivot — dedicating a division entirely to building enterprise-grade AI automation products.",
+      "p2": "Today, DDW Studio builds four independent AI-powered SaaS products, each targeting a specific operational bottleneck that costs businesses time and money every single day."
+    },
+    "divisions": {
+      "h2": "One Company, Two Divisions",
+      "studio": {
+        "title": "DDW Studio — Enterprise AI Products Division",
+        "description": "Four independent SaaS products (Lyra, HR-OS, Fleet-OS, Proposal Gen), each with its own brand, domain, and dedicated team. Built for enterprise clients who need AI that works at scale."
+      },
+      "agency": {
+        "title": "Digital Dream Works Agency — Professional Services Division",
+        "link": "Visit: DigitalDreamWorksAgency.com",
+        "description": "Retainer-based client services including marketing systems, web development, custom software, and AI automation."
+      }
+    },
+    "products": {
+      "h2": "Our AI Product Suite",
+      "p": "Four enterprise AI products built to automate your most critical operations:",
+      "lyra": "Lyra AI Voice Assistant — AI-Powered Call Automation",
+      "hros": "HR-OS — AI HR Automation Software",
+      "fleet": "Fleet-OS — AI Fleet Management System",
+      "proposal": "AI Proposal Generator — Automated Sales Proposal Software"
+    },
+    "values": {
+      "h2": "What We Stand For",
+      "v1": {
+        "title": "Results First",
+        "description": "We measure success by your ROI, not our output"
+      },
+      "v2": {
+        "title": "Enterprise Quality",
+        "description": "Built to the standards of Fortune 500 companies"
+      },
+      "v3": {
+        "title": "Honest Technology",
+        "description": "We only claim what our AI can actually deliver"
+      },
+      "v4": {
+        "title": "Client Partnership",
+        "description": "Your success is our business model"
+      }
+    },
+    "stats": {
+      "p1": "4 AI Products",
+      "p2": "500+ Teams Served",
+      "p3": "99.9% Uptime",
+      "p4": "Florida, USA"
+    },
+    "cta": {
+      "h2": "Ready to Transform Your Operations?",
+      "p": "Schedule a demo and see how DDW Studio's AI automation platform can reduce costs and drive growth.",
+      "demo": "Schedule a Demo",
+      "sales": "Contact Sales"
+    }
+  },
+  "Lyra": {
+    "metaTitle": "Lyra AI Voice Assistant | AI-Powered Call Automation | DDW Studio",
+    "metaDescription": "Lyra is an enterprise AI voice assistant that handles inbound and outbound calls with natural conversation, automatic CRM updates, and intelligent routing. Reduce call response times by 95%.",
+    "hero": {
+      "badge": "AI Voice Assistant",
+      "title": "Meet Lyra",
+      "tagline": "AI-Powered Call Automation",
+      "description": "Enterprise AI voice assistant that handles inbound and outbound calls with natural conversation, automatic CRM updates, and intelligent call routing. Perfect for sales teams, customer support, and appointment scheduling.",
+      "stat": "95% Faster Response Time",
+      "demo": "Schedule Demo",
+      "learnMore": "Learn More"
+    },
+    "automates": {
+      "h2": "What Lyra Automates",
+      "items": {
+        "inbound": "Inbound Call Handling: Answers calls instantly, 24/7, with natural conversation",
+        "outbound": "Outbound Campaigns: Automated follow-ups, appointment reminders, and sales calls",
+        "crm": "CRM Integration: Automatically logs every call, updates records, and creates tasks",
+        "routing": "Intelligent Routing: Routes complex calls to the right human agent instantly",
+        "scheduling": "Appointment Scheduling: Books, confirms, and reschedules without human input",
+        "multiLang": "Multi-language Support: Handles calls in English and Spanish (more coming)"
+      }
+    },
+    "results": {
+      "h2": "Proven Results",
+      "p1": "95% Faster Response",
+      "p2": "80% Reduction in Missed Calls",
+      "p3": "47% More Conversions",
+      "p4": "24/7 Availability"
+    },
+    "useCases": {
+      "h2": "Built For",
+      "sales": "Sales Teams: Automate follow-ups and qualification calls",
+      "support": "Customer Support: Handle high call volumes without adding headcount",
+      "healthcare": "Healthcare: Appointment scheduling and patient reminders",
+      "realestate": "Real Estate: Property inquiries and showing scheduling",
+      "financial": "Financial Services: Client outreach and appointment setting"
+    },
+    "integrations": {
+      "h2": "Integrates With Your Stack",
+      "list": "Salesforce | HubSpot | Microsoft Dynamics | Zoho CRM | Custom APIs"
+    },
+    "cta": {
+      "h2": "See Lyra in Action",
+      "p": "Schedule a live demo and watch Lyra handle real calls in your industry.",
+      "demo": "Schedule Demo",
+      "sales": "Contact Sales"
+    }
+  },
+  "HROS": {
+    "metaTitle": "HR-OS | AI HR Automation Software | DDW Studio",
+    "metaDescription": "HR-OS is an intelligent HR automation platform with AI chatbot and voice support. Answers employee questions 24/7, automates HR workflows, and integrates with existing HRIS systems. Reduce HR tickets by 80%.",
+    "hero": {
+      "badge": "AI HR Automation",
+      "title": "HR-OS",
+      "tagline": "AI HR Automation Software",
+      "description": "Intelligent HR automation platform with AI chatbot and voice support. Answers employee questions 24/7, automates HR workflows, and integrates with existing HRIS systems. Reduce HR ticket volume by 80%.",
+      "stat": "80% Fewer HR Tickets",
+      "demo": "Schedule Demo",
+      "learnMore": "Learn More"
+    },
+    "automates": {
+      "h2": "What HR-OS Automates",
+      "items": {
+        "support": "24/7 Employee Support: AI answers HR questions instantly, any time of day",
+        "onboarding": "Onboarding Automation: Guides new employees through onboarding step by step",
+        "policy": "Policy Q&A: Instant answers to benefits, PTO, and company policy questions",
+        "leave": "Leave Management: Automates leave requests, approvals, and calendar updates",
+        "document": "Document Processing: Auto-generates HR documents and routes for signatures",
+        "compliance": "Compliance Tracking: Monitors training completion and certification renewals"
+      }
+    },
+    "results": {
+      "h2": "Proven Results",
+      "p1": "80% Fewer Tickets",
+      "p2": "95% Faster Response",
+      "p3": "24/7 Availability",
+      "p4": "60% Reduction in HR Admin Time"
+    },
+    "useCases": {
+      "h2": "Built For",
+      "midsize": "Mid-size Companies (50-500 employees): Scale HR without adding headcount",
+      "enterprise": "Enterprise HR Departments: Handle high volume queries efficiently",
+      "multiLocation": "Multi-location Businesses: Consistent HR support across all locations",
+      "healthcare": "Healthcare Organizations: HIPAA-ready HR automation",
+      "logistics": "Logistics Companies: 24/7 support for shift workers"
+    },
+    "integrations": {
+      "h2": "Integrates With Your HRIS",
+      "list": "Workday | ADP | BambooHR | Gusto | SAP SuccessFactors | Custom APIs"
+    },
+    "cta": {
+      "h2": "Ready to Automate HR?",
+      "p": "See how HR-OS can free your HR team from repetitive questions and manual tasks.",
+      "demo": "Schedule Demo",
+      "sales": "Contact Sales"
+    }
+  },
+  "FleetOS": {
+    "metaTitle": "Fleet-OS | AI Fleet Management System | DDW Studio",
+    "metaDescription": "Fleet-OS is a voice-activated AI fleet management and dispatch system. AI-powered route optimization, real-time driver coordination, and automated scheduling for logistics operations. Reduce dispatch errors by 92%.",
+    "hero": {
+      "badge": "AI Fleet Management",
+      "title": "Fleet-OS",
+      "tagline": "AI Fleet Management System",
+      "description": "Voice-activated fleet management and dispatch system for logistics operations. AI-powered route optimization, real-time driver coordination, and automated scheduling. Reduce dispatch errors by 92%.",
+      "stat": "92% Fewer Dispatch Errors",
+      "demo": "Schedule Demo",
+      "learnMore": "Learn More"
+    },
+    "automates": {
+      "h2": "What Fleet-OS Automates",
+      "items": {
+        "voice": "Voice Dispatch: Dispatchers control entire fleet with voice commands",
+        "route": "AI Route Optimization: Real-time routing based on traffic, weather, and priorities",
+        "coordination": "Driver Coordination: Automated assignment and real-time communication",
+        "tracking": "Fleet Tracking: Live GPS tracking of every vehicle in your fleet",
+        "scheduling": "Automated Scheduling: AI builds and optimizes driver schedules automatically",
+        "delivery": "Delivery Confirmation: Automated proof of delivery and customer notifications"
+      }
+    },
+    "results": {
+      "h2": "Proven Results",
+      "p1": "92% Fewer Errors",
+      "p2": "18% Fuel Cost Reduction",
+      "p3": "35% Faster Deliveries",
+      "p4": "24/7 Operations"
+    },
+    "useCases": {
+      "h2": "Built For",
+      "trucking": "Trucking Companies: Long-haul and regional fleet management",
+      "lastMile": "Last-Mile Delivery: Urban delivery optimization",
+      "field": "Field Service Operations: Technician scheduling and routing",
+      "medical": "Medical Transport: Patient transport coordination",
+      "distCenter": "Distribution Centers: Warehouse to customer delivery automation"
+    },
+    "integrations": {
+      "h2": "Integrates With Your Systems",
+      "list": "Google Maps | Samsara | Geotab | QuickBooks | Custom ERP | Custom APIs"
+    },
+    "cta": {
+      "h2": "Optimize Your Fleet Today",
+      "p": "See how Fleet-OS eliminates dispatch errors and cuts fuel costs for logistics operations.",
+      "demo": "Schedule Demo",
+      "sales": "Contact Sales"
+    }
+  },
+  "ProposalGen": {
+    "metaTitle": "AI Proposal Generator | Automated Sales Proposal Software | DDW Studio",
+    "metaDescription": "AI-powered proposal generation that creates professional sales proposals instantly from CRM data. Voice-activated, customizable templates, and automatic client personalization. Close deals 3x faster.",
+    "hero": {
+      "badge": "AI Sales Automation",
+      "title": "AI Proposal Generator",
+      "tagline": "Automated Sales Proposal Software",
+      "description": "AI-powered proposal generation that creates professional sales proposals instantly from CRM data. Voice-activated, customizable templates, and automatic client personalization. Close deals 3x faster.",
+      "stat": "3x Faster Deal Closing",
+      "demo": "Schedule Demo",
+      "learnMore": "Learn More"
+    },
+    "automates": {
+      "h2": "What AI Proposal Generator Automates",
+      "items": {
+        "instant": "Instant Proposals: Generate complete proposals in under 60 seconds",
+        "crm": "CRM Data Pull: Automatically pulls client data from your CRM",
+        "voice": "Voice Activation: Create proposals with a voice command",
+        "templates": "Custom Templates: Industry-specific templates that match your brand",
+        "personalization": "Auto Personalization: Every proposal customized to the specific client",
+        "esignature": "E-Signature Ready: Send and track proposals with built-in e-signature"
+      }
+    },
+    "results": {
+      "h2": "Proven Results",
+      "p1": "3x Faster Proposals",
+      "p2": "60% More Proposals Sent",
+      "p3": "40% Higher Win Rate",
+      "p4": "<60s Creation Time"
+    },
+    "useCases": {
+      "h2": "Built For",
+      "b2b": "B2B Sales Teams: Close more deals with less admin time",
+      "consulting": "Consulting Firms: Professional proposals that win clients",
+      "marketing": "Marketing Agencies: Branded proposals in seconds",
+      "it": "IT Service Providers: Technical proposals with accurate pricing",
+      "realestate": "Real Estate Professionals: Property proposals and investment decks"
+    },
+    "integrations": {
+      "h2": "Integrates With Your CRM",
+      "list": "Salesforce | HubSpot | Pipedrive | Zoho | Monday.com | Custom APIs"
+    },
+    "cta": {
+      "h2": "Start Closing Deals Faster",
+      "p": "See how AI Proposal Generator creates winning proposals in under 60 seconds.",
+      "demo": "Schedule Demo",
+      "sales": "Contact Sales"
+    }
+  },
+  "ComingSoon": {
+    "title": "Coming Soon",
+    "description": "We're building something extraordinary. This section of the DDW Studio platform is currently under development and will be available shortly.",
+    "backHome": "Back to Home"
+  }
+}

@@ -1,16 +1,25 @@
+// components/Footer.tsx — Section 10: Footer (Internationalized)
+// Uses useTranslations('Footer') to pull translated footer links, tagline, and copyright.
+//
+// HOW IT WORKS:
+// 1. t('tagline') → "Enterprise AI solutions..." (en) or "Soluzioni AI enterprise..." (it)
+// 2. t('columns.products') → "Products" (en) or "Prodotti" (it) — column headers translated
+// 3. t('productLinks.0') → "Lyra" — product names stay in English
+// 4. t('solutionLinks.0') → "Customer Support" (en) or "Supporto Clienti" (it) — solutions translated
+// 5. t('companyLinks.1') → "Careers" (en) or "Lavora con Noi" (it) — standard Italian phrase
+// 6. t('location') → "Florida, USA" (en) or "Florida, USA — Roma, Italia" (it)
+//    ⚠️ Italian adds Roma for local SEO
+// 7. t('copyright') contains {year} placeholder — we replace it with current year
+
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
+// useTranslations — hook to get translated strings from the Footer namespace
+import { useTranslations } from 'next-intl';
+// Link from i18n/navigation — locale-aware link (auto-adds /it/ prefix)
+import { Link } from '@/i18n/navigation';
 
-const footerLinks = {
-  Products: ['Lyra', 'HR-OS', 'Dispatch', 'Proposal Gen'],
-  Solutions: ['Customer Support', 'HR Automation', 'Field Operations', 'Document Generation'],
-  Company: ['About', 'Careers', 'Blog', 'Press'],
-  Resources: ['Documentation', 'API Reference', 'Status', 'Support'],
-  Legal: ['Privacy', 'Terms', 'Security', 'Cookies'],
-};
-
+// Social links — icons and hrefs don't change per locale
 const socialLinks = [
   {
     name: 'Twitter',
@@ -41,14 +50,38 @@ const socialLinks = [
   },
 ];
 
+// Footer column keys — maps to the translation structure
+// Each column has a header (columns.X) and links array (XLinks)
+const columnConfig = [
+  {
+    columnKey: 'products',
+    linksKey: 'productLinks',
+    paths: ['/products/lyra', '/products/hr-os', '/products/fleet-os', '/products/proposal-gen']
+  },
+  {
+    columnKey: 'company',
+    linksKey: 'companyLinks',
+    paths: ['/', '/about', '/#contact']
+  },
+  {
+    columnKey: 'legal',
+    linksKey: 'legalLinks',
+    paths: ['/privacy', '/terms', '/#security', '/cookies']
+  },
+] as const;
+
 export default function Footer() {
+  // useTranslations('Footer') — reads from "Footer" key in en.json or it.json
+  const t = useTranslations('Footer');
+
   return (
     <footer className="relative border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12 mb-16">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-3 lg:col-span-1">
+            {/* Locale-aware Link — clicking logo goes to correct locale homepage */}
             <Link href="/" className="flex items-center gap-3 mb-6 group">
               <div className="relative w-11 h-11">
                 <Image
@@ -59,13 +92,17 @@ export default function Footer() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-white font-display">DDW Studio</span>
-                <span className="text-[10px] text-zinc-500 uppercase tracking-wider">Enterprise AI</span>
+                {/* t('brand') → "DDW Studio" — always English */}
+                <span className="text-xl font-bold text-white font-display">{t('brand')}</span>
+                {/* t('brandSub') → "Enterprise AI" — always English */}
+                <span className="text-[10px] text-zinc-500 uppercase tracking-wider">{t('brandSub')}</span>
               </div>
             </Link>
+            {/* t('tagline') → brand tagline, translated for SEO */}
             <p className="text-sm text-zinc-500 mb-6 leading-relaxed">
-              Enterprise AI solutions that transform operations and drive growth.
+              {t('tagline')}
             </p>
+            {/* Social links — icons don't change, aria-labels stay English */}
             <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a
@@ -80,21 +117,39 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Link Columns */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h3 className="text-sm font-semibold text-white mb-4 font-display">{category}</h3>
+          {/* Link Columns — each column header and link text is translated */}
+          {columnConfig.map(({ columnKey, linksKey, paths }) => (
+            <div key={columnKey}>
+              {/* t('columns.products') → "Products" (en) or "Prodotti" (it) */}
+              <h3 className="text-sm font-semibold text-white mb-4 font-display">
+                {t(`columns.${columnKey}`)}
+              </h3>
               <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href={`#${link.toLowerCase().replace(' ', '-')}`}
-                      className="text-sm text-zinc-500 hover:text-white transition-colors duration-300 link-hover"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                {/* Loop through paths to render links */}
+                {paths.map((path, index) => {
+                  const linkText = t(`${linksKey}.${index}`);
+                  const isExternal = path.startsWith('http') || path.startsWith('#');
+
+                  return (
+                    <li key={index}>
+                      {isExternal ? (
+                        <a
+                          href={path}
+                          className="text-sm text-zinc-500 hover:text-white transition-colors duration-300 link-hover"
+                        >
+                          {linkText}
+                        </a>
+                      ) : (
+                        <Link
+                          href={path as any}
+                          className="text-sm text-zinc-500 hover:text-white transition-colors duration-300 link-hover"
+                        >
+                          {linkText}
+                        </Link>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
@@ -102,15 +157,21 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+          {/* Copyright — t('copyright') contains {year} placeholder */}
+          {/* EN: "© 2026 DDW Studio. Digital Dream Works LLC. All rights reserved." */}
+          {/* IT: "© 2026 DDW Studio. Digital Dream Works LLC. Tutti i diritti riservati." */}
           <p className="text-sm text-zinc-500">
-            © {new Date().getFullYear()} DDW Studio. Digital Dream Works LLC. All rights reserved.
+            {t('copyright', { year: new Date().getFullYear().toString() })}
           </p>
+          {/* Location badge */}
           <div className="flex items-center gap-2 text-sm text-zinc-500">
             <span className="flex items-center gap-1">
               <svg className="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
               </svg>
-              Florida, USA
+              {/* t('location') → "Florida, USA" (en) or "Florida, USA — Roma, Italia" (it) */}
+              {/* ⚠️ Italian adds Roma, Italia for local SEO advantage */}
+              {t('location')}
             </span>
           </div>
         </div>
