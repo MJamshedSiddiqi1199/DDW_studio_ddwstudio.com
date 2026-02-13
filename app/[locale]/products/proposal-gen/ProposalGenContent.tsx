@@ -183,7 +183,7 @@ export default function ProposalGenContent() {
                                                 </div>
                                                 <div>
                                                     <div className="text-[10px] font-bold text-indigo-400 uppercase mb-1">AI Voice Command</div>
-                                                    <div className="text-xs text-zinc-300 font-medium">"Generate SaaS proposal for Acme Corp with 2yr discount"</div>
+                                                    <div className="text-xs text-zinc-300 font-medium">&quot;Generate SaaS proposal for Acme Corp with 2yr discount&quot;</div>
                                                 </div>
                                             </motion.div>
                                         </div>
@@ -345,7 +345,7 @@ export default function ProposalGenContent() {
                                         <Users className="w-10 h-10 text-zinc-400" />
                                         <div>
                                             <div className="text-sm font-bold text-white">Loved by Sales Ops</div>
-                                            <div className="text-xs text-zinc-500 leading-relaxed italic">"It's like having a full-time proposals assistant for every rep."</div>
+                                            <div className="text-xs text-zinc-500 leading-relaxed italic">&quot;It&apos;s like having a full-time proposals assistant for every rep.&quot;</div>
                                         </div>
                                     </div>
                                 </div>

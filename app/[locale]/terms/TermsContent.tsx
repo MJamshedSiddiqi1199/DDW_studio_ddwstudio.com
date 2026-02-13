@@ -8,6 +8,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import LegalPageLayout from '@/components/legal/LegalPageLayout';
 import LegalSection from '@/components/legal/LegalSection';
 
@@ -68,12 +69,12 @@ export default function TermsContent() {
             <LegalSection number="7" title={t('s7.title')}>
                 <p>
                     {t('s7.p1')}{' '}
-                    <a
+                    <Link
                         href="/privacy"
                         className="text-indigo-400 hover:text-indigo-300 underline underline-offset-4 transition-colors"
                     >
                         ddwstudio.com/privacy
-                    </a>
+                    </Link>
                     . {t('s7.p2')}
                 </p>
             </LegalSection>
