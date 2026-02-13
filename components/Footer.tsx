@@ -85,7 +85,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-6 group">
               <div className="relative w-11 h-11">
                 <Image
-                  src="https://mgx-backend-cdn.metadl.com/generate/images/945228/2026-02-05/ae679f7f-3454-4e69-8fe6-315c16aebc94.png"
+                  src="/logo.jpeg"
                   alt="DDW Studio Logo"
                   fill
                   className="object-contain transform transition-transform duration-300 group-hover:scale-110"

@@ -152,7 +152,7 @@
         "h2Pre": "L'",
         "h2Highlight": "Evoluzione AI",
         "h2Post": "di Digital Dream Works",
-        "aboutPara": "DDW Studio è la divisione AI enterprise di <company>Digital Dream Works LLC</company>, una società tecnologica con sede in Florida e presenza a Roma, Italia. Ci siamo evoluti dai servizi digitali tradizionali alla creazione di prodotti AI all'avanguardia che trasformano le operazioni aziendali.",
+        "aboutPara": "DDW Studio è la divisione AI enterprise di <company>Digital Dream Works LLC</company>, una società tecnologica con sede a Roma, Italia. Ci siamo evoluti dai servizi digitali tradizionali alla creazione di prodotti AI all'avanguardia che trasformano le operazioni aziendali.",
         "companyName": "Digital Dream Works LLC",
         "ddwCard": {
             "title": "DDW Studio",
@@ -171,7 +171,7 @@
             "certified": "Certificato",
             "uptimeSla": "Uptime SLA"
         },
-        "location": "Florida, USA — Roma, Italia"
+        "location": "Roma, Italia"
     },
     "Testimonials": {
         "badge": "Successo dei Clienti",
@@ -261,7 +261,7 @@
             "Cookie"
         ],
         "copyright": "© {year} DDW Studio. Digital Dream Works LLC. Tutti i diritti riservati.",
-        "location": "Florida, USA — Roma, Italia"
+        "location": "Roma, Italia"
     },
     "ContactForm": {
         "title": "Pianifica la tua Demo Enterprise",
@@ -388,7 +388,7 @@
             "title": "Contattaci",
             "p1": "Se hai domande su questa Informativa sulla Privacy, contattaci a:",
             "emailLabel": "Email:",
-            "address": "Digital Dream Works LLC, Florida, USA — Roma, Italia",
+            "address": "Digital Dream Works LLC, Roma, Italia",
             "websiteLabel": "Sito web:"
         }
     },
@@ -461,7 +461,7 @@
             "title": "Contatti",
             "p1": "Domande su questi Termini? Contattaci a:",
             "emailLabel": "Email:",
-            "address": "Digital Dream Works LLC, Florida, USA — Roma, Italia"
+            "address": "Digital Dream Works LLC, Roma, Italia"
         }
     },
     "CookiePolicy": {
@@ -586,7 +586,7 @@
             "p1": "4 Prodotti AI",
             "p2": "Oltre 500 Team Serviti",
             "p3": "99.9% Uptime",
-            "p4": "Florida, USA — Roma, Italia"
+            "p4": "Roma, Italia"
         },
         "cta": {
             "h2": "Pronto a Trasformare le Tue Operazioni?",

@@ -44,6 +44,9 @@ export async function generateMetadata({
     const t = await getTranslations({ locale, namespace: 'Metadata' });
 
     return {
+        // Resolve absolute URLs for social images, favicons, etc.
+        metadataBase: new URL(locale === 'it' ? 'https://ddwstudio.it' : 'https://ddwstudio.com'),
+
         // The title tag — critical for SEO
         // EN: "DDW Studio - AI Automation Platform..."
         // IT: "DDW Studio | Piattaforma AI Enterprise per Aziende Italiane"
@@ -56,11 +59,11 @@ export async function generateMetadata({
         keywords: t('keywords'),
 
         // hreflang alternate links — tells Google about both language versions
-        // This is CRITICAL for international SEO
+        // Updated to use the correct domain for each locale
         alternates: {
             languages: {
                 en: 'https://ddwstudio.com/',
-                it: 'https://ddwstudio.com/it/',
+                it: 'https://ddwstudio.it/',
             },
         },
 
@@ -71,6 +74,14 @@ export async function generateMetadata({
             type: 'website',
             siteName: 'DDW Studio',
             locale: locale === 'it' ? 'it_IT' : 'en_US',
+            images: [
+                {
+                    url: '/logo.jpeg',
+                    width: 1200,
+                    height: 630,
+                    alt: 'DDW Studio - AI Automation Platform',
+                },
+            ],
         },
 
         // Twitter card metadata
@@ -78,6 +89,14 @@ export async function generateMetadata({
             card: 'summary_large_image',
             title: t('title'),
             description: t('description'),
+            images: ['/logo.jpeg'],
+        },
+
+        // Favicon and App Icons
+        icons: {
+            icon: '/logo.jpeg',
+            shortcut: '/logo.jpeg',
+            apple: '/logo.jpeg',
         },
 
         robots: {
@@ -112,6 +131,11 @@ export default async function LocaleLayout({ children, params }: Props) {
         // EN pages get lang="en", IT pages get lang="it"
         <html lang={locale} className="scroll-smooth">
             <head>
+                {/* Favicon / App Icons */}
+                <link rel="icon" href="/logo.jpeg" />
+                <link rel="apple-touch-icon" href="/logo.jpeg" />
+                <link rel="shortcut icon" href="/logo.jpeg" />
+
                 {/* SEO keywords meta tag */}
                 <meta name="keywords" content={locale === 'it'
                     ? 'piattaforma AI enterprise, automazione aziendale AI, intelligenza artificiale per aziende, assistente vocale AI Italia, software automazione HR, gestione flotte AI, DDW Studio Roma'
@@ -121,7 +145,7 @@ export default async function LocaleLayout({ children, params }: Props) {
                 {/* hreflang tags — tell search engines about language variants */}
                 {/* This helps Google show the Italian version to Italian users */}
                 <link rel="alternate" hrefLang="en" href="https://ddwstudio.com/" />
-                <link rel="alternate" hrefLang="it" href="https://ddwstudio.com/it/" />
+                <link rel="alternate" hrefLang="it" href="https://ddwstudio.it/" />
                 <link rel="alternate" hrefLang="x-default" href="https://ddwstudio.com/" />
 
                 {/* Organization schema markup for Italian SEO (local business in Roma) */}
@@ -133,7 +157,7 @@ export default async function LocaleLayout({ children, params }: Props) {
                                 '@context': 'https://schema.org',
                                 '@type': 'Organization',
                                 name: 'DDW Studio',
-                                url: 'https://ddwstudio.com/it/',
+                                url: 'https://ddwstudio.it/',
                                 address: {
                                     '@type': 'PostalAddress',
                                     addressLocality: 'Roma',

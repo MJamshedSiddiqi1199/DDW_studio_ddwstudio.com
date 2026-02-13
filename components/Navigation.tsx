@@ -67,7 +67,7 @@ export default function Navigation() {
           <Link href="/" className="flex items-center gap-3 group relative z-50">
             <div className="relative w-11 h-11">
               <Image
-                src="https://mgx-backend-cdn.metadl.com/generate/images/945228/2026-02-05/ae679f7f-3454-4e69-8fe6-315c16aebc94.png"
+                src="/logo.jpeg"
                 alt="DDW Studio Logo"
                 fill
                 className="object-contain transform transition-transform duration-500 group-hover:scale-110"

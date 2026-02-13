@@ -10,10 +10,28 @@ export const routing = defineRouting({
     // All locales that are supported by the application
     locales: ['en', 'it'],
 
-    // The default locale — English. When users visit ddwstudio.com, they get English.
+    // The default locale — English. 
     defaultLocale: 'en',
 
     // 'as-needed' means the default locale (en) won't show in the URL,
     // but non-default locales (it) will show as /it/
-    localePrefix: 'as-needed'
+    localePrefix: 'as-needed',
+
+    // Domain-based routing: 
+    // ddwstudio.com -> defaults to English
+    // ddwstudio.it -> defaults to Italian
+    domains: [
+        {
+            domain: 'ddwstudio.com',
+            defaultLocale: 'en',
+            // Optional: restrict locales available on this domain
+            locales: ['en']
+        },
+        {
+            domain: 'ddwstudio.it',
+            defaultLocale: 'it',
+            // Optional: restrict locales available on this domain
+            locales: ['it']
+        }
+    ]
 });
