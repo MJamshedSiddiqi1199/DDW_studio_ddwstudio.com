@@ -20,7 +20,7 @@
   },
   "Hero": {
     "badge1": "Enterprise AI Platform",
-    "badge2": "SOC 2 Certified",
+    "badge2": "Enterprise Grade AI",
     "h1Line1": "AI Automation Platform",
     "h1Line2": "for Modern Enterprises",
     "subheadline": "Automate voice calls, HR operations, fleet management, and proposal generation with enterprise-grade AI.",
@@ -168,7 +168,7 @@
     "stats": {
       "saasProducts": "SaaS Products",
       "aiOps": "AI Operations",
-      "certified": "Certified",
+      "certified": "Infrastructure",
       "uptimeSla": "Uptime SLA"
     },
     "location": "Florida, USA"
@@ -203,7 +203,7 @@
     "h2Highlight": "Security",
     "subtitle": "Your data security is our top priority. We employ industry-leading security practices and maintain compliance with major regulatory frameworks.",
     "feature1": {
-      "title": "SOC 2 Type II",
+      "title": "Secure Infrastructure",
       "description": "Independently audited security controls and processes"
     },
     "feature2": {
@@ -219,7 +219,7 @@
       "description": "Enterprise-grade infrastructure with guaranteed availability"
     },
     "certifications": [
-      "SOC 2",
+      "Privacy Focused",
       "GDPR",
       "HIPAA",
       "ISO 27001",

@@ -105,7 +105,7 @@ export default function AboutContent() {
                         >
                             <div className="relative w-full h-full rounded-2xl overflow-hidden">
                                 <Image
-                                    src="https://mgx-backend-cdn.metadl.com/generate/images/945228/2026-02-05/7392b71d-c110-4c97-a82e-274451129e5b.png"
+                                    src="/images/ai-evoluation-of-ddw-04.jpg"
                                     alt="DDW Studio Corporate"
                                     fill
                                     className="object-cover"
@@ -251,31 +251,40 @@ export default function AboutContent() {
 
                 {/* ── Section 7: CTA ── */}
                 <section className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="glass-card p-12 sm:p-20 text-center relative overflow-hidden group">
+                    <div className="glass-card p-12 sm:p-20 text-center relative overflow-hidden group min-h-[400px] flex flex-col justify-center">
+                        <Image
+                            src="/images/ready-to-transform-your-operation-05.jpg"
+                            alt="Transform"
+                            fill
+                            className="object-cover opacity-20 group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-700"></div>
                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-50"></div>
 
-                        <h2 className="text-4xl sm:text-5xl font-bold text-white font-display mb-6">
-                            {t('cta.h2')}
-                        </h2>
-                        <p className="text-zinc-400 text-lg mb-10 max-w-2xl mx-auto">
-                            {t('cta.p')}
-                        </p>
+                        <div className="relative z-10">
+                            <h2 className="text-4xl sm:text-5xl font-bold text-white font-display mb-6">
+                                {t('cta.h2')}
+                            </h2>
+                            <p className="text-zinc-400 text-lg mb-10 max-w-2xl mx-auto">
+                                {t('cta.p')}
+                            </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <button
-                                onClick={openContactModal}
-                                className="px-10 py-4 bg-white text-black font-bold rounded-2xl hover:bg-zinc-200 transition-all duration-300 flex items-center group shadow-xl shadow-white/5"
-                            >
-                                <span>{t('cta.demo')}</span>
-                                <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                            </button>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                                <button
+                                    onClick={openContactModal}
+                                    className="px-10 py-4 bg-white text-black font-bold rounded-2xl hover:bg-zinc-200 transition-all duration-300 flex items-center group shadow-xl shadow-white/5"
+                                >
+                                    <span>{t('cta.demo')}</span>
+                                    <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                                </button>
 
-                            <button
-                                onClick={openContactModal}
-                                className="px-10 py-4 bg-transparent border border-white/10 text-white font-bold rounded-2xl hover:bg-white/5 transition-all duration-300"
-                            >
-                                {t('cta.sales')}
-                            </button>
+                                <button
+                                    onClick={openContactModal}
+                                    className="px-10 py-4 bg-transparent border border-white/10 text-white font-bold rounded-2xl hover:bg-white/5 transition-all duration-300"
+                                >
+                                    {t('cta.sales')}
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </section>

@@ -8,6 +8,7 @@
 import { useTranslations } from 'next-intl';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useModal } from '@/components/ContactForm/ModalContext';
 import {
@@ -27,6 +28,7 @@ import {
     Bell,
     Search
 } from 'lucide-react';
+import IntegrationsSection from '@/components/IntegrationsSection';
 
 export default function FleetOSContent() {
     const t = useTranslations('FleetOS');
@@ -112,78 +114,15 @@ export default function FleetOSContent() {
                                 className="relative"
                             >
                                 {/* Simulated Fleet Dashboard UI */}
-                                <div className="relative z-10 glass-card p-6 aspect-video flex flex-col gap-4 overflow-hidden border-emerald-500/20 shadow-2xl shadow-emerald-500/5">
-                                    {/* Top Bar */}
-                                    <div className="flex justify-between items-center border-b border-white/5 pb-4">
-                                        <div className="flex gap-2">
-                                            <div className="w-3 h-3 rounded-full bg-red-500/50"></div>
-                                            <div className="w-3 h-3 rounded-full bg-amber-500/50"></div>
-                                            <div className="w-3 h-3 rounded-full bg-emerald-500/50"></div>
-                                        </div>
-                                        <div className="flex gap-4">
-                                            <Search className="w-4 h-4 text-zinc-500" />
-                                            <Bell className="w-4 h-4 text-zinc-500" />
-                                        </div>
-                                    </div>
-
-                                    {/* Main Content Area */}
-                                    <div className="flex-1 grid grid-cols-12 gap-4">
-                                        {/* Sidebar List */}
-                                        <div className="col-span-4 space-y-2">
-                                            {[1, 2, 3, 4].map((i) => (
-                                                <div key={i} className={`p-2 rounded-lg border border-white/5 ${i === 1 ? 'bg-emerald-500/10 border-emerald-500/30' : 'bg-white/5'}`}>
-                                                    <div className="flex items-center gap-2">
-                                                        <Truck className={`w-3 h-3 ${i === 1 ? 'text-emerald-400' : 'text-zinc-500'}`} />
-                                                        <span className="text-[10px] font-bold text-zinc-300">TRUCK #0{i}82</span>
-                                                    </div>
-                                                    <div className="h-1 w-full bg-white/5 rounded-full mt-2 overflow-hidden">
-                                                        <motion.div
-                                                            initial={{ width: 0 }}
-                                                            animate={{ width: i === 1 ? '85%' : '40%' }}
-                                                            className={`h-full ${i === 1 ? 'bg-emerald-500' : 'bg-zinc-600'}`}
-                                                        />
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
-
-                                        {/* Map Area */}
-                                        <div className="col-span-8 bg-zinc-900/50 rounded-xl relative overflow-hidden border border-white/5">
-                                            <div className="absolute inset-0 opacity-20">
-                                                {/* SVG Map Lines */}
-                                                <svg className="w-full h-full" viewBox="0 0 100 100">
-                                                    <path d="M10 20 L40 20 L40 50 L80 50 L80 80" fill="none" stroke="white" strokeWidth="0.5" />
-                                                    <path d="M20 10 L20 40 L60 40 L60 80" fill="none" stroke="white" strokeWidth="0.5" />
-                                                    <path d="M0 60 L30 60 L30 90 L70 90" fill="none" stroke="white" strokeWidth="0.5" />
-                                                </svg>
-                                            </div>
-
-                                            {/* Moving Truck Dots */}
-                                            <motion.div
-                                                animate={{ x: [0, 40, 40, 60], y: [0, 0, 30, 30] }}
-                                                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                                                className="absolute top-[20%] left-[10%] w-3 h-3 bg-emerald-500 rounded-full shadow-[0_0_10px_rgba(16,185,129,0.5)]"
-                                            />
-
-                                            <div className="absolute bottom-4 right-4 p-2 bg-black/80 rounded-lg border border-white/10 text-[10px] font-mono text-emerald-400">
-                                                COORD: 41.8902° N, 12.4922° E
-                                            </div>
-
-                                            {/* AI Voice Pulse Overlay */}
-                                            <div className="absolute top-4 right-4 flex items-center gap-2 px-3 py-1.5 bg-zinc-900 border border-emerald-500/30 rounded-full">
-                                                <Mic className="w-3 h-3 text-emerald-400" />
-                                                <div className="flex gap-0.5 items-end h-2">
-                                                    {[1, 2, 3, 2, 1].map((h, i) => (
-                                                        <motion.div
-                                                            key={i}
-                                                            animate={{ height: ['40%', '100%', '40%'] }}
-                                                            transition={{ duration: 0.5, repeat: Infinity, delay: i * 0.1 }}
-                                                            className="w-0.5 bg-emerald-400 rounded-full"
-                                                        />
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div className="relative z-10 glass-card p-2 aspect-video overflow-hidden border-emerald-500/20 shadow-2xl shadow-emerald-500/5">
+                                    <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                                        <Image
+                                            src="/images/fleet-os-08.jpg"
+                                            alt="Fleet-OS Dashboard"
+                                            fill
+                                            className="object-cover"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                                     </div>
                                 </div>
 
@@ -322,12 +261,21 @@ export default function FleetOSContent() {
                                             <div className="text-3xl font-bold text-white">Global</div>
                                         </div>
                                     </div>
-                                    <div className="p-8 rounded-3xl bg-zinc-800/50 border border-white/10 flex flex-col justify-between aspect-square">
-                                        <BarChart3 className="w-12 h-12 text-amber-400" />
-                                        <div className="h-10 flex items-end gap-1">
-                                            {[4, 7, 5, 9, 6, 8].map((h, i) => (
-                                                <div key={i} className="flex-1 bg-white/10 rounded-t-sm" style={{ height: `${h * 10}%` }}></div>
-                                            ))}
+                                    <div className="p-2 rounded-3xl bg-zinc-800/50 border border-white/10 flex flex-col justify-between aspect-square overflow-hidden relative group">
+                                        <Image
+                                            src="/images/built-for-fleet-os09.jpg"
+                                            alt="Built for Fleet-OS"
+                                            fill
+                                            className="object-cover opacity-40 group-hover:scale-110 transition-transform duration-700"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                        <div className="relative z-10 p-6 h-full flex flex-col justify-end">
+                                            <BarChart3 className="w-12 h-12 text-amber-400 mb-4" />
+                                            <div className="h-10 flex items-end gap-1">
+                                                {[4, 7, 5, 9, 6, 8].map((h, i) => (
+                                                    <div key={i} className="flex-1 bg-white/40 rounded-t-sm" style={{ height: `${h * 10}%` }}></div>
+                                                ))}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -337,50 +285,47 @@ export default function FleetOSContent() {
                 </section>
 
                 {/* ── Section 5: Integrations ── */}
-                <section className="py-24 relative overflow-hidden">
-                    <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center pt-10 border-t border-white/5">
-                        <h2 className="text-2xl font-bold font-display mb-12 text-zinc-500 uppercase tracking-[0.3em]">{t('integrations.h2')}</h2>
-                        <div className="flex flex-wrap justify-center gap-x-12 gap-y-8 text-2xl lg:text-4xl font-bold text-white/20 tracking-tighter">
-                            {t('integrations.list').split(' | ').map((item, i) => (
-                                <motion.span
-                                    key={i}
-                                    whileHover={{ scale: 1.1, color: 'rgba(16,185,129,0.8)' }}
-                                    className="cursor-default transition-all duration-300"
-                                >
-                                    {item}
-                                </motion.span>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                <IntegrationsSection
+                    title="Integrates With Your Systems"
+                    items={['Google Maps', 'Samsara', 'Geotab', 'QuickBooks', 'Custom ERP', 'Custom APIs']}
+                    accentColor="emerald"
+                />
 
                 {/* ── Section 6: CTA ── */}
                 <section className="py-32 relative">
                     <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-                        <div className="relative glass-card bg-zinc-900 p-16 lg:p-32 text-center overflow-hidden border-emerald-500/20">
-                            <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/10 via-transparent to-teal-600/10"></div>
+                        <div className="relative glass-card bg-zinc-900/50 p-16 lg:p-32 text-center overflow-hidden border-emerald-500/20 group min-h-[500px] flex flex-col justify-center">
+                            <Image
+                                src="/images/ready-to-transform-your-operation-05.jpg"
+                                alt="Transform"
+                                fill
+                                className="object-cover opacity-10 group-hover:scale-105 transition-transform duration-700"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/20 via-transparent to-teal-600/20"></div>
 
                             {/* Visual Accent */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 blur-[100px] pointer-events-none"></div>
                             <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-500/5 blur-[100px] pointer-events-none"></div>
 
-                            <h2 className="text-5xl lg:text-8xl font-bold font-display mb-8 relative z-10 tracking-tight">{t('cta.h2')}</h2>
-                            <p className="text-xl lg:text-2xl text-zinc-400 mb-14 max-w-3xl mx-auto relative z-10 leading-relaxed">{t('cta.p')}</p>
+                            <div className="relative z-10">
+                                <h2 className="text-5xl lg:text-7xl font-bold font-display mb-8 tracking-tight">{t('cta.h2')}</h2>
+                                <p className="text-xl lg:text-2xl text-zinc-400 mb-14 max-w-3xl mx-auto leading-relaxed">{t('cta.p')}</p>
 
-                            <div className="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
-                                <button
-                                    onClick={openContactModal}
-                                    className="px-14 py-6 bg-white text-black font-bold rounded-2xl hover:bg-zinc-200 transition-all shadow-2xl shadow-white/10 flex items-center justify-center group text-lg"
-                                >
-                                    {t('cta.demo')}
-                                    <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
-                                </button>
-                                <button
-                                    onClick={openContactModal}
-                                    className="px-14 py-6 bg-transparent border border-white/20 text-white font-bold rounded-2xl hover:bg-white/5 transition-all text-lg"
-                                >
-                                    {t('cta.sales')}
-                                </button>
+                                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                                    <button
+                                        onClick={openContactModal}
+                                        className="px-14 py-6 bg-white text-black font-bold rounded-2xl hover:bg-zinc-200 transition-all shadow-2xl shadow-white/10 flex items-center justify-center group text-lg"
+                                    >
+                                        {t('cta.demo')}
+                                        <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
+                                    </button>
+                                    <button
+                                        onClick={openContactModal}
+                                        className="px-14 py-6 bg-transparent border border-white/20 text-white font-bold rounded-2xl hover:bg-white/5 transition-all text-lg"
+                                    >
+                                        {t('cta.sales')}
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -8,6 +8,7 @@
 import { useTranslations } from 'next-intl';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useModal } from '@/components/ContactForm/ModalContext';
 import {
@@ -27,6 +28,7 @@ import {
     Star,
     Users
 } from 'lucide-react';
+import IntegrationsSection from '@/components/IntegrationsSection';
 
 export default function ProposalGenContent() {
     const t = useTranslations('ProposalGen');
@@ -110,83 +112,15 @@ export default function ProposalGenContent() {
                                 className="relative"
                             >
                                 {/* Simulated Proposal Interface */}
-                                <div className="relative z-10 glass-card p-0 aspect-[4/3] flex flex-col overflow-hidden border-indigo-500/20 shadow-2xl shadow-indigo-500/5 bg-zinc-900/40">
-                                    {/* App Header */}
-                                    <div className="p-4 bg-zinc-900/80 border-b border-white/5 flex justify-between items-center">
-                                        <div className="flex items-center gap-3">
-                                            <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center">
-                                                <PenTool className="w-4 h-4 text-white" />
-                                            </div>
-                                            <span className="text-sm font-bold text-zinc-300">Proposal Builder AI</span>
-                                        </div>
-                                        <div className="flex items-center gap-4">
-                                            <div className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[10px] font-bold text-emerald-400">SYNCED TO CRM</div>
-                                            <div className="w-8 h-8 rounded-full bg-zinc-800 border border-white/5"></div>
-                                        </div>
-                                    </div>
-
-                                    {/* Editor Area */}
-                                    <div className="flex-1 flex">
-                                        {/* Sidebar */}
-                                        <div className="w-48 border-r border-white/5 p-4 space-y-6 hidden sm:block">
-                                            <div className="space-y-2">
-                                                <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">TEMPLATES</div>
-                                                <div className="p-2 rounded-lg bg-indigo-500/10 text-indigo-400 text-xs font-bold border border-indigo-500/20">Enterprise B2B</div>
-                                                <div className="p-2 rounded-lg hover:bg-white/5 text-zinc-400 text-xs font-medium transition-colors">Digital Agency</div>
-                                                <div className="p-2 rounded-lg hover:bg-white/5 text-zinc-400 text-xs font-medium transition-colors">IT Services</div>
-                                            </div>
-                                            <div className="space-y-4">
-                                                <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">PERSONALIZATION</div>
-                                                <div className="flex items-center gap-2 px-1">
-                                                    <CheckCircle2 className="w-3 h-3 text-emerald-400" />
-                                                    <span className="text-[10px] text-zinc-400">Client Logos</span>
-                                                </div>
-                                                <div className="flex items-center gap-2 px-1 text-emerald-400">
-                                                    <CheckCircle2 className="w-3 h-3 text-emerald-400" />
-                                                    <span className="text-[10px] text-zinc-400">Case Studies</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {/* Document Preview */}
-                                        <div className="flex-1 p-6 relative bg-white/5">
-                                            <div className="max-w-md mx-auto aspect-[1/1.414] bg-zinc-800 rounded-lg shadow-2xl p-8 flex flex-col gap-4 border border-white/5">
-                                                <div className="h-6 w-32 bg-indigo-600/20 rounded mb-4"></div>
-                                                <div className="h-10 w-full bg-white/5 rounded"></div>
-                                                <div className="space-y-2 mt-4">
-                                                    <div className="h-2 w-full bg-white/5 rounded"></div>
-                                                    <div className="h-2 w-full bg-white/5 rounded"></div>
-                                                    <div className="h-2 w-[80%] bg-white/5 rounded"></div>
-                                                </div>
-                                                <div className="mt-8 grid grid-cols-2 gap-4">
-                                                    <div className="h-20 bg-indigo-500/10 rounded border border-indigo-500/20 flex flex-col items-center justify-center gap-2">
-                                                        <Star className="w-4 h-4 text-amber-400" />
-                                                        <span className="text-[8px] font-bold text-zinc-400 uppercase">Executive Summary</span>
-                                                    </div>
-                                                    <div className="h-20 bg-white/5 rounded border border-white/5"></div>
-                                                </div>
-                                                <div className="mt-auto pt-6 border-t border-white/5 flex justify-between items-center text-[8px] text-zinc-500">
-                                                    <span>Proposal #8293</span>
-                                                    <span className="font-bold text-indigo-400">Closing AI Generation...</span>
-                                                </div>
-                                            </div>
-
-                                            {/* AI Overlay Notification */}
-                                            <motion.div
-                                                initial={{ x: 50, opacity: 0 }}
-                                                animate={{ x: 0, opacity: 1 }}
-                                                transition={{ delay: 0.5 }}
-                                                className="absolute bottom-10 right-10 p-4 bg-black border border-indigo-500/30 rounded-2xl shadow-2xl flex items-start gap-3 w-64"
-                                            >
-                                                <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center flex-shrink-0 animate-pulse">
-                                                    <Mic className="w-4 h-4 text-white" />
-                                                </div>
-                                                <div>
-                                                    <div className="text-[10px] font-bold text-indigo-400 uppercase mb-1">AI Voice Command</div>
-                                                    <div className="text-xs text-zinc-300 font-medium">&quot;Generate SaaS proposal for Acme Corp with 2yr discount&quot;</div>
-                                                </div>
-                                            </motion.div>
-                                        </div>
+                                <div className="relative z-10 glass-card p-2 aspect-[4/3] flex items-center justify-center overflow-hidden border-indigo-500/20 shadow-2xl shadow-indigo-500/5 bg-zinc-900/40">
+                                    <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                                        <Image
+                                            src="/images/ai-proposal-generator-06.jpg"
+                                            alt="AI Proposal Generator"
+                                            fill
+                                            className="object-cover"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                                     </div>
                                 </div>
 
@@ -358,46 +292,43 @@ export default function ProposalGenContent() {
                 </section>
 
                 {/* ── Section 5: Integrations ── */}
-                <section className="py-24 relative border-t border-white/5">
-                    <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-                        <h2 className="text-2xl font-bold font-display mb-12 text-zinc-500 uppercase tracking-[0.3em]">{t('integrations.h2')}</h2>
-                        <div className="flex flex-wrap justify-center gap-x-12 gap-y-8 text-2xl lg:text-4xl font-bold text-white/10 tracking-tighter">
-                            {t('integrations.list').split(' | ').map((item, i) => (
-                                <motion.span
-                                    key={i}
-                                    whileHover={{ scale: 1.1, color: 'rgba(99, 102, 241, 0.8)' }}
-                                    className="cursor-default transition-all duration-300"
-                                >
-                                    {item}
-                                </motion.span>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                <IntegrationsSection
+                    title="Integrates With Your CRM"
+                    items={['Salesforce', 'HubSpot', 'Pipedrive', 'Zoho', 'Monday.com', 'Custom APIs']}
+                    accentColor="indigo"
+                />
 
                 {/* ── Section 6: CTA ── */}
                 <section className="py-32 relative">
                     <div className="max-w-4xl mx-auto px-6 relative z-10">
-                        <div className="relative glass-card bg-zinc-900/50 p-16 lg:p-24 text-center overflow-hidden border-indigo-500/20">
+                        <div className="relative glass-card bg-zinc-900/50 p-16 lg:p-24 text-center overflow-hidden border-indigo-500/20 group min-h-[400px] flex flex-col justify-center">
+                            <Image
+                                src="/images/ready-to-transform-your-operation-05.jpg"
+                                alt="Transform"
+                                fill
+                                className="object-cover opacity-10 group-hover:scale-105 transition-transform duration-700"
+                            />
                             <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/5 via-transparent to-amber-600/5"></div>
 
-                            <h2 className="text-4xl lg:text-6xl font-bold font-display mb-8 relative z-10 tracking-tight">{t('cta.h2')}</h2>
-                            <p className="text-xl text-zinc-400 mb-14 max-w-2xl mx-auto relative z-10 leading-relaxed">{t('cta.p')}</p>
+                            <div className="relative z-10">
+                                <h2 className="text-4xl lg:text-6xl font-bold font-display mb-8 tracking-tight">{t('cta.h2')}</h2>
+                                <p className="text-xl text-zinc-400 mb-14 max-w-2xl mx-auto leading-relaxed">{t('cta.p')}</p>
 
-                            <div className="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
-                                <button
-                                    onClick={openContactModal}
-                                    className="px-12 py-6 bg-white text-black font-bold rounded-2xl hover:bg-zinc-200 transition-all shadow-2xl shadow-white/10 flex items-center justify-center group text-lg"
-                                >
-                                    {t('cta.demo')}
-                                    <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
-                                </button>
-                                <button
-                                    onClick={openContactModal}
-                                    className="px-12 py-6 bg-transparent border border-white/20 text-white font-bold rounded-2xl hover:bg-white/5 transition-all text-lg"
-                                >
-                                    {t('cta.sales')}
-                                </button>
+                                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                                    <button
+                                        onClick={openContactModal}
+                                        className="px-12 py-6 bg-white text-black font-bold rounded-2xl hover:bg-zinc-200 transition-all shadow-2xl shadow-white/10 flex items-center justify-center group text-lg"
+                                    >
+                                        {t('cta.demo')}
+                                        <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
+                                    </button>
+                                    <button
+                                        onClick={openContactModal}
+                                        className="px-12 py-6 bg-transparent border border-white/20 text-white font-bold rounded-2xl hover:bg-white/5 transition-all text-lg"
+                                    >
+                                        {t('cta.sales')}
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

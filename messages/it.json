@@ -1,7 +1,7 @@
 {
     "Metadata": {
         "title": "DDW Studio | Piattaforma AI Enterprise per Aziende Italiane",
-        "description": "Automatizza chiamate, HR, logistica e proposte commerciali con DDW Studio. Soluzioni AI enterprise per aziende italiane. Certificato SOC 2 e conforme GDPR. Prenota una demo gratuita.",
+        "description": "Automatizza chiamate, HR, logistica e proposte commerciali con DDW Studio. Soluzioni AI enterprise per aziende italiane. Sicurezza Enterprise e conforme GDPR. Prenota una demo gratuita.",
         "keywords": "piattaforma AI enterprise, automazione aziendale AI, intelligenza artificiale per aziende, assistente vocale AI Italia, software automazione HR, gestione flotte AI, DDW Studio Roma"
     },
     "Navigation": {
@@ -20,7 +20,7 @@
     },
     "Hero": {
         "badge1": "Piattaforma AI Enterprise",
-        "badge2": "Certificato SOC 2",
+        "badge2": "AI di Grado Enterprise",
         "h1Line1": "Piattaforma di Automazione AI",
         "h1Line2": "per le Aziende Moderne",
         "subheadline": "Automatizza chiamate vocali, operazioni HR, gestione flotta e generazione di proposte commerciali con AI di livello enterprise.",
@@ -168,7 +168,7 @@
         "stats": {
             "saasProducts": "Prodotti SaaS",
             "aiOps": "Operazioni AI 24/7",
-            "certified": "Certificato",
+            "certified": "Infrastruttura",
             "uptimeSla": "Uptime SLA"
         },
         "location": "Roma, Italia"
@@ -203,7 +203,7 @@
         "h2Highlight": "Bancario",
         "subtitle": "La sicurezza dei tuoi dati è la nostra priorità assoluta. Utilizziamo pratiche di sicurezza leader del settore e manteniamo la conformità con i principali framework normativi.",
         "feature1": {
-            "title": "SOC 2 Type II",
+            "title": "Infrastruttura Sicura",
             "description": "Controlli e processi di sicurezza verificati in modo indipendente"
         },
         "feature2": {
@@ -219,7 +219,7 @@
             "description": "Infrastruttura enterprise con disponibilità garantita"
         },
         "certifications": [
-            "SOC 2",
+            "Privacy Focus",
             "GDPR",
             "HIPAA",
             "ISO 27001",

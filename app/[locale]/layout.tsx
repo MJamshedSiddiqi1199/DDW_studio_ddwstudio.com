@@ -12,16 +12,18 @@
 // 6. Generate locale-specific metadata (title, description, keywords)
 
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+// import { Inter } from 'next/font/google'; // Disabled due to network restriction (getaddrinfo ENOTFOUND)
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import '../globals.css'; // CSS stays in the parent app/ directory
 import { ModalProvider } from '@/components/ContactForm/ModalContext';
+import ResponsiveZoom from '@/components/ResponsiveZoom';
 
 // Load the Inter font for the entire app
-const inter = Inter({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin'] });
+const inter = { className: 'font-sans' }; // Fallback to system font to bypass Google Fonts fetch failure
 
 // generateStaticParams tells Next.js to pre-render pages for EACH locale
 // at build time. This creates /en/ and /it/ versions of every page.
@@ -129,7 +131,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     return (
         // Set the lang attribute on <html> — essential for SEO and screen readers
         // EN pages get lang="en", IT pages get lang="it"
-        <html lang={locale} className="scroll-smooth">
+        <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
             <head>
                 {/* Favicon / App Icons */}
                 <link rel="icon" href="/logo.jpeg" />
@@ -169,12 +171,32 @@ export default async function LocaleLayout({ children, params }: Props) {
                         }}
                     />
                 )}
+
+                {/* CRITICAL: Blocking script to set zoom BEFORE page render */}
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            (function() {
+                                function setInitialZoom() {
+                                    if (window.innerWidth > 768) {
+                                        var baseTarget = 0.9;
+                                        var pixelRatio = window.devicePixelRatio || 1;
+                                        var cssZoom = (baseTarget / pixelRatio) * 100;
+                                        document.documentElement.style.zoom = cssZoom + "%";
+                                    }
+                                }
+                                setInitialZoom();
+                            })();
+                        `,
+                    }}
+                />
             </head>
             <body className={inter.className}>
                 {/* NextIntlClientProvider passes translation messages to ALL client components */}
                 {/* Without this wrapper, useTranslations() won't work in client components */}
                 <NextIntlClientProvider>
                     <ModalProvider>
+                        <ResponsiveZoom />
                         {children}
                     </ModalProvider>
                 </NextIntlClientProvider>

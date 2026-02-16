@@ -8,6 +8,7 @@
 import { useTranslations } from 'next-intl';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useModal } from '@/components/ContactForm/ModalContext';
 import {
@@ -23,6 +24,7 @@ import {
     Zap,
     FileJson
 } from 'lucide-react';
+import IntegrationsSection from '@/components/IntegrationsSection';
 
 export default function HROSContent() {
     const t = useTranslations('HROS');
@@ -103,33 +105,15 @@ export default function HROSContent() {
                                 transition={{ duration: 1, ease: "easeOut" }}
                                 className="relative"
                             >
-                                <div className="relative z-10 glass-card p-8 aspect-video flex items-center justify-center overflow-hidden">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-transparent"></div>
-
-                                    {/* Abstract Dashboard Visual */}
-                                    <div className="w-full space-y-4 relative z-10">
-                                        <div className="h-4 w-1/2 bg-blue-500/20 rounded-full animate-pulse"></div>
-                                        <div className="grid grid-cols-3 gap-4">
-                                            <div className="h-20 bg-white/5 rounded-2xl border border-white/10"></div>
-                                            <div className="h-20 bg-blue-500/10 rounded-2xl border border-blue-500/20"></div>
-                                            <div className="h-20 bg-white/5 rounded-2xl border border-white/10"></div>
-                                        </div>
-                                        <div className="h-32 bg-white/[0.02] rounded-2xl border border-white/5 p-4">
-                                            <div className="space-y-3">
-                                                <div className="h-2 w-full bg-white/10 rounded-full"></div>
-                                                <div className="h-2 w-4/5 bg-white/10 rounded-full"></div>
-                                                <div className="h-2 w-3/4 bg-white/10 rounded-full"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Floating Avatar Circles */}
-                                    <div className="absolute top-10 right-10 flex -space-x-3">
-                                        {[1, 2, 3].map((i) => (
-                                            <div key={i} className="w-10 h-10 rounded-full border-2 border-black bg-zinc-800 flex items-center justify-center">
-                                                <Users className="w-5 h-5 text-blue-400" />
-                                            </div>
-                                        ))}
+                                <div className="relative z-10 glass-card p-2 aspect-video flex items-center justify-center overflow-hidden">
+                                    <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                                        <Image
+                                            src="/images/hros-10.jpg"
+                                            alt="HR-OS Platform"
+                                            fill
+                                            className="object-cover"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                                     </div>
                                 </div>
 
@@ -253,40 +237,43 @@ export default function HROSContent() {
                 </section>
 
                 {/* ── Section 5: Integrations ── */}
-                <section className="py-24 relative">
-                    <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-                        <h2 className="text-3xl font-bold font-display mb-10 text-zinc-300 uppercase tracking-widest">{t('integrations.h2')}</h2>
-                        <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-xl lg:text-3xl font-bold text-white/30 tracking-tighter">
-                            {t('integrations.list').split(' | ').map((item, i) => (
-                                <span key={i} className="hover:text-blue-400 transition-colors cursor-default">{item}</span>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                <IntegrationsSection
+                    title="Integrates With Your HRIS"
+                    items={['Workday', 'ADP', 'BambooHR', 'Gusto', 'SAP SuccessFactors', 'Custom APIs']}
+                    accentColor="blue"
+                />
 
                 {/* ── Section 6: CTA ── */}
                 <section className="py-32">
                     <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                        <div className="relative glass-card p-12 lg:p-24 text-center overflow-hidden">
+                        <div className="relative glass-card p-12 lg:p-24 text-center overflow-hidden group min-h-[400px] flex flex-col justify-center">
+                            <Image
+                                src="/images/ready-to-transform-your-operation-05.jpg"
+                                alt="Transform"
+                                fill
+                                className="object-cover opacity-10 group-hover:scale-105 transition-transform duration-700"
+                            />
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-indigo-600/10"></div>
 
-                            <h2 className="text-5xl lg:text-7xl font-bold font-display mb-8 relative z-10">{t('cta.h2')}</h2>
-                            <p className="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto relative z-10">{t('cta.p')}</p>
+                            <div className="relative z-10">
+                                <h2 className="text-5xl lg:text-7xl font-bold font-display mb-8">{t('cta.h2')}</h2>
+                                <p className="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto">{t('cta.p')}</p>
 
-                            <div className="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
-                                <button
-                                    onClick={openContactModal}
-                                    className="px-12 py-5 bg-white text-black font-bold rounded-2xl hover:bg-zinc-200 transition-all shadow-2xl shadow-white/10 flex items-center justify-center group"
-                                >
-                                    {t('cta.demo')}
-                                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                                </button>
-                                <button
-                                    onClick={openContactModal}
-                                    className="px-12 py-5 bg-transparent border border-white/20 text-white font-bold rounded-2xl hover:bg-white/5 transition-all"
-                                >
-                                    {t('cta.sales')}
-                                </button>
+                                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                                    <button
+                                        onClick={openContactModal}
+                                        className="px-12 py-5 bg-white text-black font-bold rounded-2xl hover:bg-zinc-200 transition-all shadow-2xl shadow-white/10 flex items-center justify-center group"
+                                    >
+                                        {t('cta.demo')}
+                                        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                                    </button>
+                                    <button
+                                        onClick={openContactModal}
+                                        className="px-12 py-5 bg-transparent border border-white/20 text-white font-bold rounded-2xl hover:bg-white/5 transition-all"
+                                    >
+                                        {t('cta.sales')}
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

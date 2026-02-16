@@ -8,6 +8,7 @@
 import { useTranslations } from 'next-intl';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useModal } from '@/components/ContactForm/ModalContext';
 import {
@@ -22,8 +23,13 @@ import {
     Calendar,
     ChevronRight,
     ArrowRight,
-    Users
+    Users,
+    Headphones,
+    Stethoscope,
+    Building2,
+    Briefcase
 } from 'lucide-react';
+import IntegrationsSection from '@/components/IntegrationsSection';
 
 export default function LyraContent() {
     const t = useTranslations('Lyra');
@@ -104,30 +110,15 @@ export default function LyraContent() {
                                 transition={{ duration: 1, ease: "easeOut" }}
                                 className="relative"
                             >
-                                <div className="relative z-10 glass-card p-4 aspect-square flex items-center justify-center">
-                                    <div className="w-full h-full rounded-2xl bg-gradient-to-br from-violet-600/20 to-indigo-600/20 flex items-center justify-center relative overflow-hidden group">
-                                        <motion.div
-                                            animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.6, 0.3] }}
-                                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                            className="absolute inset-0 bg-violet-500/10 rounded-full blur-3xl"
+                                <div className="relative z-10 glass-card p-2 aspect-square flex items-center justify-center overflow-hidden">
+                                    <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                                        <Image
+                                            src="/images/meet-lyra-11.jpg"
+                                            alt="Meet Lyra"
+                                            fill
+                                            className="object-cover"
                                         />
-                                        <Mic className="w-32 h-32 text-white group-hover:scale-110 transition-transform duration-500" strokeWidth={1} />
-
-                                        {/* Animated Pulsing Rings */}
-                                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                            {[1, 2, 3].map((i) => (
-                                                <div
-                                                    key={i}
-                                                    className="absolute border border-white/10 rounded-full"
-                                                    style={{
-                                                        width: `${i * 150}px`,
-                                                        height: `${i * 150}px`,
-                                                        opacity: 1 - (i * 0.3),
-                                                        animation: `ping ${3 + i}s cubic-bezier(0, 0, 0.2, 1) infinite`
-                                                    }}
-                                                />
-                                            ))}
-                                        </div>
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                                     </div>
                                 </div>
 
@@ -206,13 +197,19 @@ export default function LyraContent() {
                             <div>
                                 <h2 className="text-4xl font-bold font-display mb-12">{t('useCases.h2')}</h2>
                                 <ul className="space-y-6">
-                                    {['sales', 'support', 'healthcare', 'realestate', 'financial'].map((key) => (
-                                        <li key={key} className="flex items-start gap-4 group">
-                                            <div className="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-violet-500/20 border border-violet-500/40 flex items-center justify-center group-hover:bg-violet-500 transition-colors">
-                                                <CheckCircle2 className="w-4 h-4 text-violet-400 group-hover:text-white transition-colors" />
+                                    {[
+                                        { key: 'sales', icon: Users },
+                                        { key: 'support', icon: Headphones },
+                                        { key: 'healthcare', icon: Stethoscope },
+                                        { key: 'realestate', icon: Building2 },
+                                        { key: 'financial', icon: Briefcase }
+                                    ].map((item) => (
+                                        <li key={item.key} className="flex items-start gap-4 group">
+                                            <div className="mt-1 flex-shrink-0 w-8 h-8 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center group-hover:bg-violet-500/20 transition-colors">
+                                                <item.icon className="w-4 h-4 text-violet-400" />
                                             </div>
                                             <p className="text-lg text-zinc-300 group-hover:text-white transition-colors">
-                                                {t(`useCases.${key}`)}
+                                                {t(`useCases.${item.key}`)}
                                             </p>
                                         </li>
                                     ))}
@@ -221,20 +218,33 @@ export default function LyraContent() {
 
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="space-y-4">
-                                    <div className="aspect-square rounded-3xl bg-zinc-900 overflow-hidden relative group">
-                                        <div className="absolute inset-0 bg-violet-600/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                                        <div className="p-8 h-full flex flex-col justify-end">
-                                            <Users className="w-8 h-8 text-violet-400 mb-4" />
-                                            <span className="text-sm font-bold text-white">Sales</span>
+                                    <div className="aspect-square rounded-3xl bg-zinc-900 border border-white/5 overflow-hidden relative group">
+                                        <div className="absolute inset-0 bg-violet-600/5 group-hover:bg-violet-600/10 transition-colors"></div>
+                                        <div className="p-8 h-full flex flex-col justify-between relative z-10">
+                                            <Users className="w-10 h-10 text-violet-400 group-hover:scale-110 transition-transform" />
+                                            <span className="text-sm font-bold text-white uppercase tracking-widest">Sales</span>
                                         </div>
                                     </div>
-                                    <div className="aspect-[4/5] rounded-3xl bg-zinc-800 flex items-center justify-center text-4xl text-white/5 font-bold font-display italic">LYRA</div>
+                                    <div className="aspect-[4/5] rounded-3xl bg-violet-600 flex flex-col items-center justify-center p-8 text-center group">
+                                        <Mic className="w-12 h-12 text-white mb-4 group-hover:animate-pulse" />
+                                        <div className="text-2xl text-white font-bold font-display italic tracking-tighter">LYRA</div>
+                                    </div>
                                 </div>
                                 <div className="space-y-4 pt-8">
-                                    <div className="aspect-video rounded-3xl bg-zinc-900 border border-white/5 flex items-center justify-center p-6 italic text-zinc-700 font-display">ROUTING</div>
-                                    <div className="aspect-square rounded-3xl bg-gradient-to-br from-violet-600 to-indigo-600 p-8 flex flex-col justify-end">
-                                        <BarChart3 className="w-8 h-8 text-white mb-4" />
-                                        <span className="text-sm font-bold text-white uppercase tracking-widest">Growth</span>
+                                    <div className="aspect-video rounded-3xl bg-zinc-900 border border-white/5 flex flex-col items-center justify-center p-6 group">
+                                        <GitMerge className="w-8 h-8 text-zinc-600 mb-2 group-hover:text-violet-500 transition-colors" />
+                                        <div className="text-xs italic text-zinc-500 font-display uppercase tracking-[0.2em]">ROUTING</div>
+                                    </div>
+                                    <div className="aspect-square rounded-3xl bg-gradient-to-br from-violet-600/20 to-indigo-600/20 border border-violet-500/20 p-8 flex flex-col justify-between group">
+                                        <div className="flex gap-1 items-end h-12">
+                                            {[40, 70, 50, 90, 60].map((h, i) => (
+                                                <div key={i} className="flex-1 bg-violet-500/40 rounded-t-sm" style={{ height: `${h}%` }}></div>
+                                            ))}
+                                        </div>
+                                        <div className="flex items-center justify-between">
+                                            <span className="text-sm font-bold text-white uppercase tracking-widest">Growth</span>
+                                            <BarChart3 className="w-6 h-6 text-violet-400" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -243,40 +253,43 @@ export default function LyraContent() {
                 </section>
 
                 {/* ── Section 5: Integrations ── */}
-                <section className="py-24 relative">
-                    <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-                        <h2 className="text-3xl font-bold font-display mb-10 text-zinc-300 uppercase tracking-widest">{t('integrations.h2')}</h2>
-                        <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-xl lg:text-3xl font-bold text-white/30 tracking-tighter">
-                            {t('integrations.list').split(' | ').map((item, i) => (
-                                <span key={i} className="hover:text-violet-400 transition-colors cursor-default">{item}</span>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                <IntegrationsSection
+                    title="Integrates With Your Stack"
+                    items={['Salesforce', 'HubSpot', 'Microsoft Dynamics', 'Zoho CRM', 'Custom APIs']}
+                    accentColor="violet"
+                />
 
                 {/* ── Section 6: CTA ── */}
                 <section className="py-32">
                     <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                        <div className="relative glass-card p-12 lg:p-24 text-center overflow-hidden">
+                        <div className="relative glass-card p-12 lg:p-24 text-center overflow-hidden group min-h-[400px] flex flex-col justify-center">
+                            <Image
+                                src="/images/ready-to-transform-your-operation-05.jpg"
+                                alt="Transform"
+                                fill
+                                className="object-cover opacity-10 group-hover:scale-105 transition-transform duration-700"
+                            />
                             <div className="absolute inset-0 bg-gradient-to-br from-violet-600/10 via-transparent to-indigo-600/10"></div>
 
-                            <h2 className="text-5xl lg:text-7xl font-bold font-display mb-8 relative z-10">{t('cta.h2')}</h2>
-                            <p className="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto relative z-10">{t('cta.p')}</p>
+                            <div className="relative z-10">
+                                <h2 className="text-5xl lg:text-7xl font-bold font-display mb-8">{t('cta.h2')}</h2>
+                                <p className="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto">{t('cta.p')}</p>
 
-                            <div className="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
-                                <button
-                                    onClick={openContactModal}
-                                    className="px-12 py-5 bg-white text-black font-bold rounded-2xl hover:bg-zinc-200 transition-all shadow-2xl shadow-white/10 flex items-center justify-center group"
-                                >
-                                    {t('cta.demo')}
-                                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                                </button>
-                                <button
-                                    onClick={openContactModal}
-                                    className="px-12 py-5 bg-transparent border border-white/20 text-white font-bold rounded-2xl hover:bg-white/5 transition-all"
-                                >
-                                    {t('cta.sales')}
-                                </button>
+                                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                                    <button
+                                        onClick={openContactModal}
+                                        className="px-12 py-5 bg-white text-black font-bold rounded-2xl hover:bg-zinc-200 transition-all shadow-2xl shadow-white/10 flex items-center justify-center group"
+                                    >
+                                        {t('cta.demo')}
+                                        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                                    </button>
+                                    <button
+                                        onClick={openContactModal}
+                                        className="px-12 py-5 bg-transparent border border-white/20 text-white font-bold rounded-2xl hover:bg-white/5 transition-all"
+                                    >
+                                        {t('cta.sales')}
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
