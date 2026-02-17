@@ -145,7 +145,7 @@ export default function AboutContent() {
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="glass-card p-10 opacity-70 group hover:opacity-100 transition-all duration-300"
+                            className="glass-card p-10 group transition-all duration-300"
                         >
                             <div className="w-14 h-14 bg-zinc-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                                 <Users className="w-8 h-8 text-zinc-400" />
@@ -153,7 +153,12 @@ export default function AboutContent() {
                             <h3 className="text-2xl font-bold text-white mb-2 font-display">
                                 {t('divisions.agency.title')}
                             </h3>
-                            <a href="#" className="text-sm text-indigo-400 font-medium mb-4 block hover:underline">
+                            <a
+                                href="https://DigitalDreamWorksAgency.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-sm text-indigo-400 font-medium mb-4 block hover:underline"
+                            >
                                 {t('divisions.agency.link')}
                             </a>
                             <p className="text-zinc-500 leading-relaxed">

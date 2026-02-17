@@ -100,22 +100,29 @@ export default function CompanyInfo() {
                             </div>
 
                             {/* Agency Card */}
-                            <div className="glass-card p-6 opacity-60">
+                            <div className="glass-card p-6">
                                 <div className="flex items-start gap-4">
                                     <div className="w-14 h-14 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center flex-shrink-0">
                                         <span className="text-zinc-400 font-bold text-xl font-display">A</span>
                                     </div>
                                     <div>
                                         {/* t('agencyCard.title') → "Digital Dream Works Agency" — stays English */}
-                                        <h3 className="text-lg font-bold text-zinc-300 mb-1">{t('agencyCard.title')}</h3>
+                                        <h3 className="text-lg font-bold text-white mb-1">{t('agencyCard.title')}</h3>
                                         {/* t('agencyCard.subtitle') → "Professional Services Division" (en) or "Divisione Servizi Professionali" (it) */}
-                                        <p className="text-sm text-zinc-600 mb-2">{t('agencyCard.subtitle')}</p>
+                                        <p className="text-sm text-zinc-500 mb-2">{t('agencyCard.subtitle')}</p>
                                         {/* t('agencyCard.description') → retainer services description */}
-                                        <p className="text-sm text-zinc-500">
+                                        <p className="text-sm text-zinc-400">
                                             {t('agencyCard.description')}
                                         </p>
                                         {/* t('agencyCard.url') → domain stays the same */}
-                                        <p className="text-xs text-zinc-600 mt-2">{t('agencyCard.url')}</p>
+                                        <a
+                                            href="https://DigitalDreamWorksAgency.com"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-xs text-indigo-400 mt-2 block hover:underline hover:text-indigo-300 transition-colors"
+                                        >
+                                            {t('agencyCard.url')}
+                                        </a>
                                     </div>
                                 </div>
                             </div>
