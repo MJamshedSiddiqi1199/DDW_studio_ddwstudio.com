@@ -14,6 +14,7 @@
 import type { Metadata } from 'next';
 // import { Inter } from 'next/font/google'; // Disabled due to network restriction (getaddrinfo ENOTFOUND)
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
+import Script from 'next/script';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
@@ -133,6 +134,16 @@ export default async function LocaleLayout({ children, params }: Props) {
         // EN pages get lang="en", IT pages get lang="it"
         <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
             <head>
+                {/* Google Tag Manager */}
+                {/* Google Tag Manager - using Next.js Script component to fix build warning */}
+                <Script id="google-tag-manager" strategy="afterInteractive">
+                    {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PNGQ3GWS');`}
+                </Script>
+                {/* End Google Tag Manager */}
                 {/* Favicon / App Icons */}
                 <link rel="icon" href="/logo.jpeg" />
                 <link rel="apple-touch-icon" href="/logo.jpeg" />
@@ -192,6 +203,16 @@ export default async function LocaleLayout({ children, params }: Props) {
                 />
             </head>
             <body className={inter.className}>
+                {/* Google Tag Manager (noscript) */}
+                <noscript>
+                    <iframe
+                        src="https://www.googletagmanager.com/ns.html?id=GTM-PNGQ3GWS"
+                        height="0"
+                        width="0"
+                        style={{ display: 'none', visibility: 'hidden' }}
+                    />
+                </noscript>
+                {/* End Google Tag Manager (noscript) */}
                 {/* NextIntlClientProvider passes translation messages to ALL client components */}
                 {/* Without this wrapper, useTranslations() won't work in client components */}
                 <NextIntlClientProvider>
