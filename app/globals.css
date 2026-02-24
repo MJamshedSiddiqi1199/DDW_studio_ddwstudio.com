@@ -20,7 +20,23 @@
 }
 
 html {
+  /* Base size for mobile (keeps it readable) */
+  font-size: 16px;
   scroll-behavior: smooth;
+}
+
+@media (min-width: 1024px) {
+  html {
+    /* Scale down the entire UI on laptops/desktops to simulate a 75%-80% zoom out */
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1536px) {
+  html {
+    /* Slightly larger for ultra-wide screens */
+    font-size: 15px;
+  }
 }
 
 body {
