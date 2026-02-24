@@ -13,7 +13,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 // useTranslations — hook to get translated strings from the CompanyInfo namespace
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function CompanyInfo() {
     const [isVisible, setIsVisible] = useState(false);
@@ -21,6 +21,7 @@ export default function CompanyInfo() {
 
     // useTranslations('CompanyInfo') — reads from "CompanyInfo" key in en.json or it.json
     const t = useTranslations('CompanyInfo');
+    const locale = useLocale();
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -40,11 +41,11 @@ export default function CompanyInfo() {
     }, []);
 
     return (
-        <section ref={sectionRef} id="about" className="relative py-32 overflow-hidden">
+        <section ref={sectionRef} id="about" className="w-full relative py-32 overflow-hidden">
             {/* Background — visual, no translation */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-950/5 to-transparent"></div>
 
-            <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="relative max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     {/* Left Content */}
                     <div
@@ -80,7 +81,7 @@ export default function CompanyInfo() {
                                 <div className="flex items-start gap-4">
                                     <div className="relative w-14 h-14 flex-shrink-0">
                                         <Image
-                                            src="https://mgx-backend-cdn.metadl.com/generate/images/945228/2026-02-05/ae679f7f-3454-4e69-8fe6-315c16aebc94.png"
+                                            src="/logo.jpeg"
                                             alt="DDW Studio Logo"
                                             fill
                                             className="object-contain"
@@ -90,9 +91,9 @@ export default function CompanyInfo() {
                                         {/* t('ddwCard.title') → "DDW Studio" — brand name stays English */}
                                         <h3 className="text-lg font-bold text-white mb-1">{t('ddwCard.title')}</h3>
                                         {/* t('ddwCard.subtitle') → "Enterprise AI Products Division" (en) or "Divisione Prodotti AI Enterprise" (it) */}
-                                        <p className="text-sm text-zinc-500 mb-2">{t('ddwCard.subtitle')}</p>
+                                        <p className="text-lg text-indigo-400/90 font-semibold mb-2">{t('ddwCard.subtitle')}</p>
                                         {/* t('ddwCard.description') → card description (IT version uses Fleet-OS instead of Dispatch) */}
-                                        <p className="text-sm text-zinc-400">
+                                        <p className="text-base text-zinc-300 leading-relaxed font-medium">
                                             {t('ddwCard.description')}
                                         </p>
                                     </div>
@@ -109,9 +110,9 @@ export default function CompanyInfo() {
                                         {/* t('agencyCard.title') → "Digital Dream Works Agency" — stays English */}
                                         <h3 className="text-lg font-bold text-white mb-1">{t('agencyCard.title')}</h3>
                                         {/* t('agencyCard.subtitle') → "Professional Services Division" (en) or "Divisione Servizi Professionali" (it) */}
-                                        <p className="text-sm text-zinc-500 mb-2">{t('agencyCard.subtitle')}</p>
+                                        <p className="text-lg text-indigo-400/90 font-semibold mb-2">{t('agencyCard.subtitle')}</p>
                                         {/* t('agencyCard.description') → retainer services description */}
-                                        <p className="text-sm text-zinc-400">
+                                        <p className="text-base text-zinc-300 leading-relaxed font-medium">
                                             {t('agencyCard.description')}
                                         </p>
                                         {/* t('agencyCard.url') → domain stays the same */}
@@ -119,7 +120,7 @@ export default function CompanyInfo() {
                                             href="https://DigitalDreamWorksAgency.com"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-xs text-indigo-400 mt-2 block hover:underline hover:text-indigo-300 transition-colors"
+                                            className="text-base text-indigo-400 mt-3 block hover:underline hover:text-indigo-300 transition-colors font-medium"
                                         >
                                             {t('agencyCard.url')}
                                         </a>
@@ -138,7 +139,7 @@ export default function CompanyInfo() {
                             {/* Corporate Building Image */}
                             <div className="relative h-[400px] rounded-3xl overflow-hidden mb-8">
                                 <Image
-                                    src="https://mgx-backend-cdn.metadl.com/generate/images/945228/2026-02-05/7392b71d-c110-4c97-a82e-274451129e5b.png"
+                                    src={locale === 'it' ? '/images/rome.png' : "https://mgx-backend-cdn.metadl.com/generate/images/945228/2026-02-05/7392b71d-c110-4c97-a82e-274451129e5b.png"}
                                     alt="DDW Corporate"
                                     fill
                                     className="object-cover"

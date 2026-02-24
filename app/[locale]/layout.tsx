@@ -20,7 +20,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import '../globals.css'; // CSS stays in the parent app/ directory
 import { ModalProvider } from '@/components/ContactForm/ModalContext';
-import ResponsiveZoom from '@/components/ResponsiveZoom';
+// import ResponsiveZoom from '@/components/ResponsiveZoom';
 
 // Load the Inter font for the entire app
 // const inter = Inter({ subsets: ['latin'] });
@@ -183,24 +183,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     />
                 )}
 
-                {/* CRITICAL: Blocking script to set zoom BEFORE page render */}
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `
-                            (function() {
-                                function setInitialZoom() {
-                                    if (window.innerWidth > 768) {
-                                        var baseTarget = 0.9;
-                                        var pixelRatio = window.devicePixelRatio || 1;
-                                        var cssZoom = (baseTarget / pixelRatio) * 100;
-                                        document.documentElement.style.zoom = cssZoom + "%";
-                                    }
-                                }
-                                setInitialZoom();
-                            })();
-                        `,
-                    }}
-                />
+                {/* Standard Viewport — industrial standard for responsiveness */}
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+
             </head>
             <body className={inter.className}>
                 {/* Google Tag Manager (noscript) */}
@@ -217,7 +202,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 {/* Without this wrapper, useTranslations() won't work in client components */}
                 <NextIntlClientProvider>
                     <ModalProvider>
-                        <ResponsiveZoom />
                         {children}
                     </ModalProvider>
                 </NextIntlClientProvider>

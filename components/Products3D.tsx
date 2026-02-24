@@ -86,7 +86,7 @@ export default function Products3D() {
     }, []);
 
     return (
-        <section ref={sectionRef} id="products" className="relative py-32 overflow-hidden">
+        <section ref={sectionRef} id="products" className="w-full relative py-32 overflow-hidden">
             {/* Background Visual — no translation needed */}
             <div className="absolute inset-0 opacity-20">
                 <Image
@@ -101,7 +101,7 @@ export default function Products3D() {
             {/* Background Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-500/5 rounded-full blur-[150px]"></div>
 
-            <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="relative max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div
                     className={`text-center max-w-3xl mx-auto mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -155,7 +155,7 @@ export default function Products3D() {
                                             {t(`${product.key}.stat`)}
                                         </div>
                                         {/* t('product1.statLabel') → "faster response" (en) or "risposta più veloce" (it) */}
-                                        <div className="text-xs text-zinc-500 uppercase tracking-wider font-medium">
+                                        <div className="text-sm text-zinc-500 uppercase tracking-wider font-medium">
                                             {t(`${product.key}.statLabel`)}
                                         </div>
                                     </div>
@@ -168,13 +168,13 @@ export default function Products3D() {
                                         {t(`${product.key}.name`)}
                                     </h3>
                                     {/* t('product1.tagline') → "AI-Powered Call Automation" (en) or "Automazione Chiamate con AI" (it) */}
-                                    <p className="text-sm text-zinc-500 font-medium">
+                                    <p className="text-base text-zinc-400/80 font-medium">
                                         {t(`${product.key}.tagline`)}
                                     </p>
                                 </div>
 
                                 {/* t('product1.description') → full product description, translated for SEO */}
-                                <p className="text-zinc-400 leading-relaxed mb-8">
+                                <p className="text-lg text-zinc-400/90 leading-relaxed mb-8">
                                     {t(`${product.key}.description`)}
                                 </p>
 
@@ -184,7 +184,7 @@ export default function Products3D() {
                                     {[0, 1, 2].map((featureIndex) => (
                                         <span
                                             key={featureIndex}
-                                            className="px-3 py-1.5 text-xs font-medium text-zinc-400 bg-white/5 rounded-lg border border-white/5"
+                                            className="px-4 py-2 text-sm font-medium text-zinc-300 bg-white/5 rounded-lg border border-white/5"
                                         >
                                             {t(`${product.key}.features.${featureIndex}`)}
                                         </span>

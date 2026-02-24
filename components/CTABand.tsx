@@ -10,6 +10,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 // useTranslations — hook to get translated strings from the CTA namespace
 import { useTranslations } from 'next-intl';
 import { useModal } from './ContactForm/ModalContext';
@@ -40,14 +41,24 @@ export default function CTABand() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="contact" className="relative py-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section ref={sectionRef} id="contact" className="w-full relative py-32">
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
         <div
           className={`relative overflow-hidden rounded-3xl transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
         >
-          {/* Background — visual, no translation */}
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-700"></div>
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image
+              src="/images/call-to-action-for-homepage.png"
+              alt="CTA Background"
+              fill
+              className="object-cover"
+              priority
+            />
+            {/* Overlay to ensure text readability */}
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/90 via-purple-900/90 to-violet-900/90 mix-blend-multiply"></div>
+          </div>
 
           {/* Pattern Overlay — visual only */}
           <div className="absolute inset-0 opacity-30">

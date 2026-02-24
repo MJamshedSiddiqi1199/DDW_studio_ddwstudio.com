@@ -48,7 +48,7 @@ export default function Hero3D() {
 
 
     return (
-        <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <section ref={heroRef} className="w-full relative min-h-screen flex items-center justify-center overflow-hidden">
             {/* Background Image - 3D Shapes (no translation needed for visual elements) */}
             <div className="absolute inset-0">
                 <Image
@@ -156,7 +156,7 @@ export default function Hero3D() {
             </div>
 
             {/* ===== CONTENT — All text below uses translations ===== */}
-            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-48 lg:pb-32">
+            <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-32 pb-48 lg:pb-32">
                 <div className="text-center max-w-5xl mx-auto">
 
                     {/* Enterprise Badges — translated via t('badge1') and t('badge2') */}
@@ -188,7 +188,7 @@ export default function Hero3D() {
                     {/* EN: "AI Automation Platform" + "for Modern Enterprises" */}
                     {/* IT: "Piattaforma di Automazione AI" + "per le Aziende Moderne" */}
                     <h1
-                        className={`font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.05] mb-8 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                        className={`font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.05] mb-8 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                             }`}
                     >
                         {/* t('h1Line1') → "AI Automation Platform" (en) or "Piattaforma di Automazione AI" (it) */}

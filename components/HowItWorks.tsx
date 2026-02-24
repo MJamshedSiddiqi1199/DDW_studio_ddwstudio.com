@@ -59,11 +59,11 @@ export default function HowItWorks() {
     }, []);
 
     return (
-        <section ref={sectionRef} id="solutions" className="relative py-32 overflow-hidden">
+        <section ref={sectionRef} id="solutions" className="w-full relative py-32 overflow-hidden">
             {/* Background — visual, no translation */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-950/10 to-transparent"></div>
 
-            <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="relative max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     {/* Left - Visual (image, no translation needed) */}
                     <div

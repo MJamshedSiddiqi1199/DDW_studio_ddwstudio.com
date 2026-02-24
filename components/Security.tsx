@@ -11,6 +11,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 // useTranslations — hook to get translated strings from the Security namespace
 import { useTranslations } from 'next-intl';
 
@@ -66,11 +67,11 @@ export default function Security() {
     const certifications = ['AES-256', 'GDPR', 'HIPAA', 'ISO 27001', 'CCPA'];
 
     return (
-        <section ref={sectionRef} id="security" className="relative py-32 overflow-hidden">
+        <section ref={sectionRef} id="security" className="w-full relative py-32 overflow-hidden">
             {/* Background — visual, no translation */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-950/10 to-transparent"></div>
 
-            <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="relative max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     {/* Left Content */}
                     <div
@@ -109,9 +110,9 @@ export default function Security() {
                                     </div>
                                     <div>
                                         {/* t('feature1.title') → "Secure Infrastructure" (same in both) or "Conforme al GDPR" */}
-                                        <h3 className="font-semibold text-white mb-1">{t(`${featureKey}.title`)}</h3>
+                                        <h3 className="text-xl font-bold text-white mb-2">{t(`${featureKey}.title`)}</h3>
                                         {/* t('feature1.description') → translated description */}
-                                        <p className="text-sm text-zinc-500">{t(`${featureKey}.description`)}</p>
+                                        <p className="text-base text-zinc-400">{t(`${featureKey}.description`)}</p>
                                     </div>
                                 </div>
                             ))}
@@ -123,11 +124,22 @@ export default function Security() {
                         className={`relative transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
                             }`}
                     >
-                        <div className="glass-card p-10 lg:p-14">
+                        <div className="glass-card p-10 lg:p-14 overflow-hidden relative">
+                            {/* Background Image for Security Card */}
+                            <div className="absolute inset-0 opacity-15">
+                                <Image
+                                    src="/images/banking-security.png"
+                                    alt="Banking Security"
+                                    fill
+                                    className="object-cover"
+                                />
+                                <div className="absolute inset-0 bg-indigo-950/40"></div>
+                            </div>
+
                             {/* Shield Visual — no translation needed */}
                             <div className="relative mx-auto w-48 h-48 mb-10">
                                 <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl opacity-20 blur-3xl animate-pulse-glow"></div>
-                                <div className="relative w-full h-full rounded-3xl bg-gradient-to-br from-indigo-500/10 to-purple-600/10 border border-indigo-500/20 flex items-center justify-center">
+                                <div className="relative w-full h-full rounded-3xl bg-gradient-to-br from-indigo-500/10 to-purple-600/10 border border-indigo-500/20 flex items-center justify-center backdrop-blur-sm">
                                     <svg className="w-24 h-24 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                     </svg>
