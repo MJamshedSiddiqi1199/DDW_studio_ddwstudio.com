@@ -144,6 +144,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-PNGQ3GWS');`}
                 </Script>
                 {/* End Google Tag Manager */}
+
+                {/* Italian Version specific Google Tag (gtag.js) */}
+                {locale === 'it' && (
+                    <>
+                        <Script
+                            src="https://www.googletagmanager.com/gtag/js?id=G-93TDZ5N5K1"
+                            strategy="afterInteractive"
+                        />
+                        <Script id="google-tag-it" strategy="afterInteractive">
+                            {`
+                                window.dataLayer = window.dataLayer || [];
+                                function gtag(){dataLayer.push(arguments);}
+                                gtag('js', new Date());
+                                gtag('config', 'G-93TDZ5N5K1');
+                            `}
+                        </Script>
+                    </>
+                )}
                 {/* Favicon / App Icons */}
                 <link rel="icon" href="/logo.jpeg" />
                 <link rel="apple-touch-icon" href="/logo.jpeg" />
