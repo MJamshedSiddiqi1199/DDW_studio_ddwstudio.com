@@ -179,25 +179,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </Script>
                 {/* End Google Tag Manager */}
 
-                {/* Google Tag (gtag.js) */}
-                <Script
-                    src="https://www.googletagmanager.com/gtag/js?id=G-M8R7CDWFPR"
-                    strategy="afterInteractive"
-                />
-                <Script id="google-tag" strategy="afterInteractive">
-                    {`
-                        window.dataLayer = window.dataLayer || [];
-                        function gtag(){dataLayer.push(arguments);}
-                        gtag('js', new Date());
-                        gtag('config', 'G-M8R7CDWFPR');
-                    `}
-                </Script>
+                {/* Google Tag (gtag.js) for ddwstudio.com */}
+                {locale === 'en' && (
+                    <>
+                        <Script
+                            src="https://www.googletagmanager.com/gtag/js?id=G-M8R7CDWFPR"
+                            strategy="afterInteractive"
+                        />
+                        <Script id="google-tag-en" strategy="afterInteractive">
+                            {`
+                                window.dataLayer = window.dataLayer || [];
+                                function gtag(){dataLayer.push(arguments);}
+                                gtag('js', new Date());
+                                gtag('config', 'G-M8R7CDWFPR');
+                            `}
+                        </Script>
+                    </>
+                )}
 
-                {/* Italian Version specific Google Tag (gtag.js) - Keep for .it domain if needed */}
+                {/* Google Tag (gtag.js) for ddwstudio.it */}
                 {locale === 'it' && (
                     <>
                         <Script
-                            src="https://www.googletagmanager.com/gtag/js?id=G-93TDZ5N5K1"
+                            src="https://www.googletagmanager.com/gtag/js?id=G-79065L6XRS"
                             strategy="afterInteractive"
                         />
                         <Script id="google-tag-it" strategy="afterInteractive">
@@ -205,7 +209,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                 window.dataLayer = window.dataLayer || [];
                                 function gtag(){dataLayer.push(arguments);}
                                 gtag('js', new Date());
-                                gtag('config', 'G-93TDZ5N5K1');
+                                gtag('config', 'G-79065L6XRS');
                             `}
                         </Script>
                     </>
