@@ -83,7 +83,7 @@ export default function Navigation() {
             </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
+          {/* Desktop Navigation Link */}
           <div className="hidden lg:flex items-center gap-2">
             {navLinkKeys.map((key) => {
               const path = navPaths[key];
