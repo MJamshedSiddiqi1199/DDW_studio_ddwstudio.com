@@ -19,4 +19,4 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
  
-Sitemap: https://ddwstudio.com/sitemap.xml
+Sitemap: https://ddwstudio.it/sitemap.xml

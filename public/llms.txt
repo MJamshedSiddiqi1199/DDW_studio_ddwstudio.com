@@ -1,12 +1,12 @@
-# DDW Studio
+# DDW Studio - Europa
  
-> Proprietary AI SaaS product studio. We build and operate AI-powered software products for businesses globally.
+> Studio di prodotti SaaS AI proprietari per il mercato europeo.
  
-## Products
-- LYRA: AI receptionist for small businesses (lyrabyddw.com)
-- FleetOS: AI fleet operations platform for trucking companies (fleetosbyddw.com)
-- Sviluppiamo: Italian-language AI app builder for SMEs (sviluppiamo.dev)
+## Prodotti
+- LYRA: receptionist AI per PMI (lyrabyddw.it)
+- FleetOS: piattaforma AI per la gestione flotte (fleetosbyddw.it)
+- Sviluppiamo: costruttore di app AI in italiano (sviluppiamo.dev)
  
-## Contact
+## Contatti
 - Email: Brands@ddwstudio.com
-- Address: 7901 4TH ST N 23948, St. Petersburg, FL 33702, USA
+- Indirizzo: Roma, 00133, Italia

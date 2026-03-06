@@ -98,13 +98,17 @@ export async function generateMetadata({
         };
     }
 
-    // Italian fallback (keeping existing logic for .it)
-    const t = await getTranslations({ locale, namespace: 'Metadata' });
+    // Italian metadata for ddwstudio.it
+    const itMetadata = {
+        title: "DDW Studio — Prodotti SaaS AI",
+        description: "DDW Studio sviluppa prodotti SaaS AI proprietari per aziende europee. Include LYRA receptionist AI e FleetOS piattaforma di gestione flotte.",
+        ogImage: "https://ddwstudio.it/og-image.png",
+    };
+
     return {
         metadataBase: new URL('https://ddwstudio.it'),
-        title: t('title'),
-        description: t('description'),
-        keywords: t('keywords'),
+        title: itMetadata.title,
+        description: itMetadata.description,
         alternates: {
             languages: {
                 en: 'https://ddwstudio.com/',
@@ -112,25 +116,26 @@ export async function generateMetadata({
             },
         },
         openGraph: {
-            title: t('title'),
-            description: t('description'),
+            title: itMetadata.title,
+            description: itMetadata.description,
             type: 'website',
+            url: 'https://ddwstudio.it/',
             siteName: 'DDW Studio',
             locale: 'it_IT',
             images: [
                 {
-                    url: '/logo.jpeg',
+                    url: '/og-image.png',
                     width: 1200,
                     height: 630,
-                    alt: 'DDW Studio - AI Automation Platform',
+                    alt: itMetadata.title,
                 },
             ],
         },
         twitter: {
             card: 'summary_large_image',
-            title: t('title'),
-            description: t('description'),
-            images: ['/logo.jpeg'],
+            title: itMetadata.title,
+            description: itMetadata.description,
+            images: ['/og-image.png'],
         },
         icons: {
             icon: '/logo.jpeg',
@@ -160,9 +165,11 @@ export default async function LocaleLayout({ children, params }: Props) {
         notFound();
     }
 
-    // Enable static rendering — this tells next-intl to use the locale
-    // from params instead of reading headers (which would force dynamic rendering)
+    // Enable static rendering
     setRequestLocale(locale);
+
+    // Locale-specific GTM IDs
+    const gtmId = locale === 'it' ? 'GTM-T8S4JQFH' : 'GTM-NJ3PNBVZ';
 
     return (
         // Set the lang attribute on <html> — essential for SEO and screen readers
@@ -175,7 +182,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NJ3PNBVZ');`}
+})(window,document,'script','dataLayer','${gtmId}');`}
                 </Script>
                 {/* End Google Tag Manager */}
 
@@ -258,24 +265,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     />
                 )}
 
-                {/* Organization schema markup for Italian SEO (local business in Roma) */}
+                {/* SoftwareApplication schema markup for Italian SEO */}
                 {locale === 'it' && (
                     <script
                         type="application/ld+json"
                         dangerouslySetInnerHTML={{
                             __html: JSON.stringify({
-                                '@context': 'https://schema.org',
-                                '@type': 'Organization',
-                                name: 'DDW Studio',
-                                url: 'https://ddwstudio.it/',
-                                address: {
-                                    '@type': 'PostalAddress',
-                                    addressLocality: 'Roma',
-                                    addressCountry: 'IT',
-                                },
-                                description:
-                                    'DDW Studio è la divisione AI enterprise di Digital Dream Works LLC. Offriamo soluzioni di intelligenza artificiale per automazione aziendale.',
-                            }),
+                                "@context": "https://schema.org",
+                                "@type": "SoftwareApplication",
+                                "name": "DDW Studio",
+                                "url": "https://ddwstudio.it",
+                                "logo": "https://ddwstudio.it/logo.png",
+                                "description": "DDW Studio sviluppa prodotti SaaS AI proprietari per aziende europee. Include LYRA receptionist AI e FleetOS piattaforma di gestione flotte.",
+                                "applicationCategory": "BusinessApplication",
+                                "operatingSystem": "Web",
+                                "publisher": {
+                                    "@type": "Organization",
+                                    "name": "Digital Dream Works LLC",
+                                    "url": "https://ddwstudio.it",
+                                    "address": {
+                                        "@type": "PostalAddress",
+                                        "addressLocality": "Roma",
+                                        "postalCode": "00133",
+                                        "addressCountry": "IT"
+                                    },
+                                    "email": "Brands@ddwstudio.com",
+                                    "sameAs": [
+                                        "https://www.linkedin.com/company/digital-dream-works",
+                                        "https://www.instagram.com/digi.dreamworks/"
+                                    ]
+                                }
+                            })
                         }}
                     />
                 )}
@@ -288,7 +308,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 {/* Google Tag Manager (noscript) - Immediately after opening body */}
                 <noscript>
                     <iframe
-                        src="https://www.googletagmanager.com/ns.html?id=GTM-NJ3PNBVZ"
+                        src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
                         height="0"
                         width="0"
                         style={{ display: 'none', visibility: 'hidden' }}
