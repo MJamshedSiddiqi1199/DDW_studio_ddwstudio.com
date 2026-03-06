@@ -44,39 +44,79 @@ export async function generateMetadata({
     const { locale } = await params;
 
     // Load translations for the Metadata namespace
+    // const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+    // The user provided specific values for ddwstudio.com SEO
+    const enMetadata = {
+        title: "DDW Studio — AI SaaS Products",
+        description: "DDW Studio builds proprietary AI SaaS products for businesses globally. Products include LYRA AI Receptionist and FleetOS fleet management platform.",
+        ogImage: "https://ddwstudio.com/og-image.png",
+    };
+
+    if (locale === 'en') {
+        return {
+            metadataBase: new URL('https://ddwstudio.com'),
+            title: enMetadata.title,
+            description: enMetadata.description,
+            openGraph: {
+                title: enMetadata.title,
+                description: enMetadata.description,
+                type: 'website',
+                url: 'https://ddwstudio.com/',
+                siteName: 'DDW Studio',
+                locale: 'en_US',
+                images: [
+                    {
+                        url: '/og-image.png',
+                        width: 1200,
+                        height: 630,
+                        alt: enMetadata.title,
+                    },
+                ],
+            },
+            twitter: {
+                card: 'summary_large_image',
+                title: enMetadata.title,
+                description: enMetadata.description,
+                images: ['/og-image.png'],
+            },
+            icons: {
+                icon: '/logo.jpeg',
+                shortcut: '/logo.jpeg',
+                apple: '/logo.jpeg',
+            },
+            robots: {
+                index: true,
+                follow: true,
+            },
+            alternates: {
+                languages: {
+                    en: 'https://ddwstudio.com/',
+                    it: 'https://ddwstudio.it/',
+                },
+            },
+        };
+    }
+
+    // Italian fallback (keeping existing logic for .it)
     const t = await getTranslations({ locale, namespace: 'Metadata' });
-
     return {
-        // Resolve absolute URLs for social images, favicons, etc.
-        metadataBase: new URL(locale === 'it' ? 'https://ddwstudio.it' : 'https://ddwstudio.com'),
-
-        // The title tag — critical for SEO
-        // EN: "DDW Studio - AI Automation Platform..."
-        // IT: "DDW Studio | Piattaforma AI Enterprise per Aziende Italiane"
+        metadataBase: new URL('https://ddwstudio.it'),
         title: t('title'),
-
-        // The meta description — shown in Google search results
         description: t('description'),
-
-        // SEO keywords
         keywords: t('keywords'),
-
-        // hreflang alternate links — tells Google about both language versions
-        // Updated to use the correct domain for each locale
         alternates: {
             languages: {
                 en: 'https://ddwstudio.com/',
                 it: 'https://ddwstudio.it/',
             },
         },
-
-        // OpenGraph tags for social sharing
         openGraph: {
             title: t('title'),
             description: t('description'),
             type: 'website',
             siteName: 'DDW Studio',
-            locale: locale === 'it' ? 'it_IT' : 'en_US',
+            locale: 'it_IT',
             images: [
                 {
                     url: '/logo.jpeg',
@@ -86,22 +126,17 @@ export async function generateMetadata({
                 },
             ],
         },
-
-        // Twitter card metadata
         twitter: {
             card: 'summary_large_image',
             title: t('title'),
             description: t('description'),
             images: ['/logo.jpeg'],
         },
-
-        // Favicon and App Icons
         icons: {
             icon: '/logo.jpeg',
             shortcut: '/logo.jpeg',
             apple: '/logo.jpeg',
         },
-
         robots: {
             index: true,
             follow: true,
@@ -134,18 +169,31 @@ export default async function LocaleLayout({ children, params }: Props) {
         // EN pages get lang="en", IT pages get lang="it"
         <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
             <head>
-                {/* Google Tag Manager */}
-                {/* Google Tag Manager - using Next.js Script component to fix build warning */}
+                {/* Google Tag Manager - Script as high in <head> as possible */}
                 <Script id="google-tag-manager" strategy="afterInteractive">
                     {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PNGQ3GWS');`}
+})(window,document,'script','dataLayer','GTM-NJ3PNBVZ');`}
                 </Script>
                 {/* End Google Tag Manager */}
 
-                {/* Italian Version specific Google Tag (gtag.js) */}
+                {/* Google Tag (gtag.js) */}
+                <Script
+                    src="https://www.googletagmanager.com/gtag/js?id=G-M8R7CDWFPR"
+                    strategy="afterInteractive"
+                />
+                <Script id="google-tag" strategy="afterInteractive">
+                    {`
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'G-M8R7CDWFPR');
+                    `}
+                </Script>
+
+                {/* Italian Version specific Google Tag (gtag.js) - Keep for .it domain if needed */}
                 {locale === 'it' && (
                     <>
                         <Script
@@ -162,22 +210,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </Script>
                     </>
                 )}
+
                 {/* Favicon / App Icons */}
                 <link rel="icon" href="/logo.jpeg" />
                 <link rel="apple-touch-icon" href="/logo.jpeg" />
                 <link rel="shortcut icon" href="/logo.jpeg" />
 
-                {/* SEO keywords meta tag */}
-                <meta name="keywords" content={locale === 'it'
-                    ? 'piattaforma AI enterprise, automazione aziendale AI, intelligenza artificiale per aziende, assistente vocale AI Italia, software automazione HR, gestione flotte AI, DDW Studio Roma'
-                    : 'AI automation platform, enterprise AI software, AI voice assistant for business, HR automation software, fleet management software, automated proposal generator'
-                } />
-
-                {/* hreflang tags — tell search engines about language variants */}
-                {/* This helps Google show the Italian version to Italian users */}
-                <link rel="alternate" hrefLang="en" href="https://ddwstudio.com/" />
-                <link rel="alternate" hrefLang="it" href="https://ddwstudio.it/" />
-                <link rel="alternate" hrefLang="x-default" href="https://ddwstudio.com/" />
+                {/* JSON-LD Schema Markup */}
+                {locale === 'en' && (
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: JSON.stringify({
+                                "@context": "https://schema.org",
+                                "@type": "SoftwareApplication",
+                                "name": "DDW Studio",
+                                "url": "https://ddwstudio.com",
+                                "logo": "https://ddwstudio.com/logo.png",
+                                "description": "DDW Studio builds proprietary AI SaaS products for businesses globally. Products include LYRA AI Receptionist and FleetOS fleet management platform.",
+                                "applicationCategory": "BusinessApplication",
+                                "operatingSystem": "Web",
+                                "offers": { "@type": "Offer", "url": "https://ddwstudio.com" },
+                                "publisher": {
+                                    "@type": "Organization",
+                                    "name": "Digital Dream Works LLC",
+                                    "url": "https://ddwstudio.com",
+                                    "address": {
+                                        "@type": "PostalAddress",
+                                        "streetAddress": "7901 4TH ST N 23948",
+                                        "addressLocality": "St. Petersburg",
+                                        "addressRegion": "FL",
+                                        "postalCode": "33702",
+                                        "addressCountry": "US"
+                                    },
+                                    "email": "Brands@ddwstudio.com",
+                                    "sameAs": [
+                                        "https://www.linkedin.com/company/digital-dream-works",
+                                        "https://www.instagram.com/digi.dreamworks/"
+                                    ]
+                                }
+                            })
+                        }}
+                    />
+                )}
 
                 {/* Organization schema markup for Italian SEO (local business in Roma) */}
                 {locale === 'it' && (
@@ -206,10 +281,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
             </head>
             <body className={inter.className}>
-                {/* Google Tag Manager (noscript) */}
+                {/* Google Tag Manager (noscript) - Immediately after opening body */}
                 <noscript>
                     <iframe
-                        src="https://www.googletagmanager.com/ns.html?id=GTM-PNGQ3GWS"
+                        src="https://www.googletagmanager.com/ns.html?id=GTM-NJ3PNBVZ"
                         height="0"
                         width="0"
                         style={{ display: 'none', visibility: 'hidden' }}
